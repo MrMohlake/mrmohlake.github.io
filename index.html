@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthmark IT Solutions | Enterprise IT Services</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<!-- Preload critical resources -->
+<link rel="preload" href="css/style.css" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" as="style">
+<link rel="preload" href="js/main.js" as="script">
+
+<!-- Lazy loading for non-critical images -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
+    
+    if ('IntersectionObserver' in window) {
+      let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            let lazyImage = entry.target;
+            lazyImage.src = lazyImage.dataset.src;
+            lazyImage.classList.remove('lazy');
+            lazyImageObserver.unobserve(lazyImage);
+          }
+        });
+      });
+
+      lazyImages.forEach(function(lazyImage) {
+        lazyImageObserver.observe(lazyImage);
+      });
+    }
+  });
+</script>
+
+<body>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <p>🚀 Special Launch Offer: 20% off first year of managed services! <a href="#">Get started</a></p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-server"></i>
+        <span>Birthmark IT</span>
+      </a>
+      
+      <ul class="nav-list">
+        <li class="dropdown">
+          <a href="#">Domains <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-container">
+              <div class="dropdown-column">
+                <h4>Domain Services</h4>
+                <ul>
+                  <li><a href="domains.html">Domain Search</a></li>
+                  <li><a href="domains.html#transfer">Domain Transfer</a></li>
+                  <li><a href="domains.html#privacy">Domain Privacy</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>TLDs</h4>
+                <ul>
+                  <li><a href="domains.html#tlds">.com Domains</a></li>
+                  <li><a href="domains.html#tlds">.net Domains</a></li>
+                  <li><a href="domains.html#tlds">.tech Domains</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        
+        <li class="dropdown">
+          <a href="#">Hosting <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-container">
+              <div class="dropdown-column">
+                <h4>Web Hosting</h4>
+                <ul>
+                  <li><a href="hosting.html">Shared Hosting</a></li>
+                  <li><a href="hosting.html#vps">VPS Hosting</a></li>
+                  <li><a href="hosting.html#dedicated">Dedicated Servers</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>Specialty Hosting</h4>
+                <ul>
+                  <li><a href="hosting.html#wordpress">WordPress Hosting</a></li>
+                  <li><a href="hosting.html#ecommerce">Ecommerce Hosting</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        
+        <li class="dropdown">
+          <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-container">
+              <div class="dropdown-column">
+                <h4>IT Services</h4>
+                <ul>
+                  <li><a href="security.html">Security Solutions</a></li>
+                  <li><a href="services.html#managed">Managed IT</a></li>
+                  <li><a href="services.html#cloud">Cloud Solutions</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>Business Services</h4>
+                <ul>
+                  <li><a href="marketing.html">Digital Marketing</a></li>
+                  <li><a href="services.html#consulting">IT Consulting</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        
+        <li><a href="marketing.html">Marketing</a></li>
+        <li><a href="about.html">About</a></li>
+        
+        <li class="nav-cta">
+          <a href="#" class="btn btn-outline">Sign In</a>
+          <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        </li>
+      </ul>
+      
+      <div class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Enterprise IT Solutions Made Simple</h1>
+      <p class="subheading">Trusted by businesses worldwide for reliable technology infrastructure</p>
+      <div class="hero-cta">
+        <a href="services.html" class="btn btn-primary btn-lg">Explore Services</a>
+        <a href="contact.html" class="btn btn-outline-light btn-lg">Get a Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Indicators -->
+ <!-- Updated Trust Indicators Section with Larger Logos -->
+<section class="trust-section">
+  <div class="container">
+    <p>TRUSTED BY INDUSTRY LEADERS</p>
+    <div class="client-logos">
+      <!-- TechCorp - 33% larger -->
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjAwIDEwMCI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiNmNWY1ZjUiIHJ4PSIxMCIvPjx0ZXh0IHg9IjEwMCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMxZTNhOGEiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlRFQ0hDT1JQPC90ZXh0Pjwvc3ZnPg==" 
+           alt="TechCorp" 
+           loading="lazy"
+           width="200" height="100">
+
+      <!-- InnovateInc - 33% larger -->
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjAwIDEwMCI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiNmNWY1ZjUiIHJ4PSIxMCIvPjx0ZXh0IHg9IjEwMCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNmOTVlMGIiIHRleHQtYW5jaG9yPSJtaWRkbGUiPklOTk9WQVRFSU5DPC90ZXh0Pjwvc3ZnPg==" 
+           alt="InnovateInc" 
+           loading="lazy"
+           width="200" height="100">
+
+      <!-- GlobalSolutions - 33% larger -->
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjAwIDEwMCI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiNmNWY1ZjUiIHJ4PSIxMCIvPjx0ZXh0IHg9IjEwMCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM4NDNmYjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkdMT0JBTFNPTFVUSU9OUzwvdGV4dD48L3N2Zz4=" 
+           alt="GlobalSolutions" 
+           loading="lazy"
+           width="200" height="100">
+
+      <!-- DataSystems - 33% larger -->
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjAwIDEwMCI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiNmNWY1ZjUiIHJ4PSIxMCIvPjx0ZXh0IHg9IjEwMCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNkOTM2NmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkRBVEFTWVNURU1TPC90ZXh0Pjwvc3ZnPg==" 
+           alt="DataSystems" 
+           loading="lazy"
+           width="200" height="100">
+
+      <!-- CloudNine - 33% larger -->
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMjAwIDEwMCI+PHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiNmNWY1ZjUiIHJ4PSIxMCIvPjx0ZXh0IHg9IjEwMCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM2YWI0ZWIiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNMT1VETklORTwvdGV4dD48L3N2Zz4=" 
+           alt="CloudNine" 
+           loading="lazy"
+           width="200" height="100">
+    </div>
+  </div>
+</section>
+
+  <!-- Why Choose Us -->
+  <section class="section why-us">
+    <div class="container">
+      <h2 class="text-center">Why Choose Birthmark IT Solutions?</h2>
+      <div class="grid three-col">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Military-Grade Security</h3>
+          <p>24/7 monitoring and protection against evolving cyber threats with our comprehensive security solutions.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-tachometer-alt"></i>
+          </div>
+          <h3>99.99% Uptime</h3>
+          <p>Enterprise-level reliability with SLA-backed guarantees for your critical business applications.</p>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>24/7 Expert Support</h3>
+          <p>Dedicated support team available around the clock to resolve your technical issues quickly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="section video-section">
+    <div class="container">
+      <div class="video-container">
+        <div class="video-content">
+          <h2>See How Birthmark IT Can Transform Your Business</h2>
+          <p>Watch our 2-minute overview to discover how we help businesses like yours succeed online.</p>
+          <button class="video-play-btn" aria-label="Play video">
+            <i class="fas fa-play"></i>
+          </button>
+        </div>
+        <div class="video-wrapper">
+          <div class="video-placeholder">
+            <img src="images/video-thumbnail.jpg" alt="Video thumbnail" class="video-thumbnail">
+          </div>
+          <div class="video-embed">
+            <iframe width="560" height="315" src="https://www.youtube.com/watch?v=Hp-WzHTQALo" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Services -->
+  <section class="section bg-light">
+    <div class="container">
+      <h2 class="text-center">Our Most Popular Services</h2>
+      <div class="grid three-col">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <h3>Cloud Hosting</h3>
+          <p>Scalable, high-performance cloud infrastructure with enterprise-grade reliability.</p>
+          <div class="price">From $29.99/mo</div>
+          <a href="hosting.html" class="btn btn-outline">View Plans</a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h3>Domain Management</h3>
+          <p>Secure domain registration and management with premium DNS services.</p>
+          <div class="price">From $9.99/yr</div>
+          <a href="domains.html" class="btn btn-outline">View Options</a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <h3>Cybersecurity</h3>
+          <p>Comprehensive protection against malware, hackers, and data breaches.</p>
+          <div class="price">From $49.99/mo</div>
+          <a href="security.html" class="btn btn-outline">Get Protected</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Slider -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial-slider">
+        <!-- Slide 1 -->
+        <div class="testimonial-slide active">
+          <div class="rating">★★★★★</div>
+          <blockquote>"Birthmark migrated our entire infrastructure with zero downtime. Their team is worth every penny!"</blockquote>
+          <div class="client">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDAiIGZpbGw9IiMxZTNhOGEiLz48dGV4dCB4PSI1MCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI0MCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U0o8L3RleHQ+PC9zdmc+" 
+                 alt="Sarah Johnson" 
+                 class="client-photo">
+            <div>
+              <p class="client-name">Sarah Johnson</p>
+              <p class="client-role">CTO, TechFlow Inc.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="testimonial-slide">
+          <div class="rating">★★★★★</div>
+          <blockquote>"24/7 support that actually responds in minutes. Changed how we do business."</blockquote>
+          <div class="client">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDAiIGZpbGw9IiNmNTllMGIiLz48dGV4dCB4PSI1MCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI0MCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TVM8L3RleHQ+PC9zdmc+" 
+                 alt="Mike Chen" 
+                 class="client-photo">
+            <div>
+              <p class="client-name">Mike Chen</p>
+              <p class="client-role">CEO, RetailBot</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="testimonial-slide">
+          <div class="rating">★★★★★</div>
+          <blockquote>"Our website traffic grew by 300% after their SEO overhaul. These folks know digital marketing!"</blockquote>
+          <div class="client">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDAiIGZpbGw9IiM4NDNmYjgiLz48dGV4dCB4PSI1MCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI0MCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+QU08L3RleHQ+PC9zdmc+" 
+                 alt="Alex Morgan" 
+                 class="client-photo">
+            <div>
+              <p class="client-name">Alex Morgan</p>
+              <p class="client-role">Marketing Director, DigitalMark LLC</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 4 -->
+        <div class="testimonial-slide">
+          <div class="rating">★★★★☆</div>
+          <blockquote>"Fixed our e-commerce checkout issues in one day. Lifesavers during holiday rush!"</blockquote>
+          <div class="client">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDAiIGZpbGw9IiNkOTM2NmYiLz48dGV4dCB4PSI1MCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI0MCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UEo8L3RleHQ+PC9zdmc+" 
+                 alt="Priya Johnson" 
+                 class="client-photo">
+            <div>
+              <p class="client-name">Priya Johnson</p>
+              <p class="client-role">E-Commerce Manager, CafeSpice</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 5 -->
+        <div class="testimonial-slide">
+          <div class="rating">★★★★★</div>
+          <blockquote>"HIPAA-compliant hosting with actual human support. Rare find in this industry."</blockquote>
+          <div class="client">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDAiIGZpbGw9IiM2YWI0ZWIiLz48dGV4dCB4PSI1MCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSI0MCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Slc8L3RleHQ+PC9zdmc+" 
+                 alt="James Wilson" 
+                 class="client-photo">
+            <div>
+              <p class="client-name">James Wilson</p>
+              <p class="client-role">Partner, Wilson Law Firm</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Controls -->
+        <button class="slider-prev" aria-label="Previous testimonial">‹</button>
+        <button class="slider-next" aria-label="Next testimonial">›</button>
+        <div class="slider-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ticker Strip -->
+  <div class="ticker-strip">
+    <div class="ticker-content">
+      <span>Trusted by 5,000+ businesses worldwide</span>
+      <span>24/7 Expert Support</span>
+      <span>99.9% Uptime Guarantee</span>
+      <span>GoDaddy is a great partner - and so are we!</span>
+      <span>Free domain with annual hosting plans</span>
+    </div>
+  </div>
+
+  <!-- Websites + Marketing Section -->
+  <section class="section websites-marketing">
+    <div class="container">
+      <div class="wm-container">
+        <div class="wm-content">
+          <h2>Grow your brand with Websites + Marketing</h2>
+          <p>Build your website and get found online with a complete marketing solution that combines website builder tools, automated marketing, and SEO.</p>
+          
+          <div class="wm-features">
+            <div class="wm-feature">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <h4>Easy-to-Use Website Builder</h4>
+                <p>Create a professional website with drag-and-drop tools</p>
+              </div>
+            </div>
+            
+            <div class="wm-feature">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <h4>Built-In Marketing Tools</h4>
+                <p>Email campaigns, social posting, and more</p>
+              </div>
+            </div>
+            
+            <div class="wm-feature">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <h4>SEO Optimization</h4>
+                <p>Get found on Google with our built-in tools</p>
+              </div>
+            </div>
+            
+            <div class="wm-feature">
+              <i class="fas fa-check-circle"></i>
+              <div>
+                <h4>24/7 Security Monitoring</h4>
+                <p>Automatic protection for your website</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="wm-cta">
+            <a href="marketing.html" class="btn btn-primary btn-lg">Get Started</a>
+            <a href="#" class="btn btn-outline btn-lg">Learn More</a>
+          </div>
+        </div>
+        
+        <div class="wm-image">
+          <img src="images/website-builder-preview.jpg" alt="Website Builder Preview">
+          <div class="wm-badge">
+            Starting at $9.99<span>/mo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta bg-primary">
+    <div class="container text-center">
+      <h2>Ready to Transform Your IT Infrastructure?</h2>
+      <p>Join thousands of businesses who trust us with their technology needs</p>
+      <div class="cta-buttons">
+        <a href="tel:+15551234567" class="btn btn-light">
+          <i class="fas fa-phone"></i> Call Now: (555) 123-4567
+        </a>
+        <a href="contact.html" class="btn btn-outline-light">Get Free Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="domains.html">Domains</a></li>
+            <li><a href="hosting.html">Hosting</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="marketing.html">Marketing</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="faq.html">Help Center</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">Developer API</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="newsletter">
+            <p>Subscribe to our newsletter</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email" required>
+              <button type="submit"><i class="fas fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Birthmark IT Solutions. All rights reserved.</p>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
