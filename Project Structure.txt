@@ -1,0 +1,11 @@
+birthmark-it/
+├── index.html          # Homepage
+├── about.html          # About Us page
+├── services.html       # Services page
+├── contact.html        # Contact page
+├── css/
+│   └── style.css       # Main stylesheet
+├── js/
+│   └── main.js         # Minimal JavaScript
+├── images/             # All website images
+└── assets/             # Additional assets (fonts, icons)
