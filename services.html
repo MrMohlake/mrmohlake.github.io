@@ -7,6 +7,264 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!-- Add this CSS style block to the head section of services.html, right before the closing </head> tag -->
+<style>
+  /* Add these styles for service cards to match about.html */
+  .services-hero {
+    position: relative;
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+  }
+  
+  .services-hero .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .service-card {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    border: 1px solid #eee;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-card:hover::before {
+    height: 8px;
+  }
+  
+  .service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .service-card:hover .service-icon {
+    transform: scale(1.1);
+  }
+  
+  /* Different colors for each service card */
+  .service-card:nth-child(1)::before {
+    background: linear-gradient(90deg, #4a6bff, #6c8eff);
+  }
+  
+  .service-card:nth-child(1) .service-icon {
+    color: #4a6bff;
+  }
+  
+  .service-card:nth-child(2)::before {
+    background: linear-gradient(90deg, #00c6fb, #005bea);
+  }
+  
+  .service-card:nth-child(2) .service-icon {
+    color: #00c6fb;
+  }
+  
+  .service-card:nth-child(3)::before {
+    background: linear-gradient(90deg, #f54ea2, #ff7676);
+  }
+  
+  .service-card:nth-child(3) .service-icon {
+    color: #f54ea2;
+  }
+  
+  .service-card:nth-child(4)::before {
+    background: linear-gradient(90deg, #17ead9, #6078ea);
+  }
+  
+  .service-card:nth-child(4) .service-icon {
+    color: #17ead9;
+  }
+  
+  .service-card:nth-child(5)::before {
+    background: linear-gradient(90deg, #ff7eb3, #ff758c);
+  }
+  
+  .service-card:nth-child(5) .service-icon {
+    color: #ff7eb3;
+  }
+  
+  .service-card:nth-child(6)::before {
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4);
+  }
+  
+  .service-card:nth-child(6) .service-icon {
+    color: #ff9a9e;
+  }
+  
+  .service-card h3 {
+    margin-bottom: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+  
+  .service-card:hover h3 {
+    color: #222;
+  }
+  
+  .btn-text {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .btn-text:hover {
+    color: #4a6bff;
+  }
+
+/* Approach Section Styling */
+.approach-section .grid.two-col {
+  align-items: center; /* Vertically centers content with image */
+  gap: 3rem; /* Adds spacing between columns */
+}
+
+.approach-section .image {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.approach-section .image img {
+  width: 100%;
+  height: auto;
+  max-height: 400px; /* Prevents image from being too tall */
+  object-fit: cover; /* Ensures image fills container without distortion */
+  transition: transform 0.3s ease;
+}
+
+.approach-section .image:hover img {
+  transform: scale(1.02); /* Slight zoom on hover for interactivity */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .approach-section .grid.two-col {
+    grid-template-columns: 1fr; /* Stacks columns on mobile */
+  }
+  
+  .approach-section .image {
+    order: -1; /* Moves image above text on mobile */
+    margin-bottom: 2rem;
+  }
+}
+
+/* Service Cards with Colored Icons */
+.service-card {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  border: 1px solid #eee;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover::before {
+  height: 8px;
+}
+
+.service-card-content {
+  padding: 2rem;
+  height: 100%;
+}
+
+.service-card i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover i {
+  transform: scale(1.1);
+}
+
+/* Individual Card Colors */
+.service-card:nth-child(1)::before { background: linear-gradient(90deg, #4a6bff, #6c8eff); }
+.service-card:nth-child(1) i { color: #4a6bff; }
+
+.service-card:nth-child(2)::before { background: linear-gradient(90deg, #00c6fb, #005bea); }
+.service-card:nth-child(2) i { color: #00c6fb; }
+
+.service-card:nth-child(3)::before { background: linear-gradient(90deg, #f54ea2, #ff7676); }
+.service-card:nth-child(3) i { color: #f54ea2; }
+
+.service-card:nth-child(4)::before { background: linear-gradient(90deg, #17ead9, #6078ea); }
+.service-card:nth-child(4) i { color: #17ead9; }
+
+.service-card:nth-child(5)::before { background: linear-gradient(90deg, #ff7eb3, #ff758c); }
+.service-card:nth-child(5) i { color: #ff7eb3; }
+
+.service-card:nth-child(6)::before { background: linear-gradient(90deg, #ff9a9e, #fad0c4); }
+.service-card:nth-child(6) i { color: #ff9a9e; }
+
+.service-card:nth-child(7)::before { background: linear-gradient(90deg, #6e45e2, #88d3ce); }
+.service-card:nth-child(7) i { color: #6e45e2; }
+
+.service-card:nth-child(8)::before { background: linear-gradient(90deg, #ffafbd, #ffc3a0); }
+.service-card:nth-child(8) i { color: #ffafbd; }
+
+/* Grid Layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
 </head>
 <body>
   <!-- Announcement Bar -->
@@ -81,106 +339,170 @@
     </picture>
   </section>
 
-  <!-- Services Section -->
-  <section class="section">
-    <div class="container">
-      <h2 class="text-center">Our Core Services</h2>
-      <div class="grid three-col">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-cloud" aria-hidden="true"></i>
-          </div>
-          <h3>Cloud Solutions</h3>
-          <p>Scalable cloud infrastructure, migration, and management services tailored to your business needs.</p>
-          <a href="#" class="btn btn-text">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-shield-alt" aria-hidden="true"></i>
-          </div>
-          <h3>Cybersecurity</h3>
-          <p>Comprehensive security solutions including threat detection, vulnerability assessments, and compliance.</p>
-          <a href="#" class="btn btn-text">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-network-wired" aria-hidden="true"></i>
-          </div>
-          <h3>Network Services</h3>
-          <p>Design, implementation, and management of secure, high-performance business networks.</p>
-          <a href="#" class="btn btn-text">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-database" aria-hidden="true"></i>
-          </div>
-          <h3>Data Management</h3>
-          <p>Data storage, backup, recovery, and analytics solutions to turn data into business value.</p>
-          <a href="#" class="btn btn-text">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-laptop-code" aria-hidden="true"></i>
-          </div>
-          <h3>Managed IT</h3>
-          <p>Proactive monitoring, maintenance, and support for your critical IT infrastructure.</p>
-          <a href="#" class="btn btn-text">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
-          </div>
-          <h3>Web & Mobile</h3>
-          <p>Custom web and mobile application development to enhance your digital presence.</p>
-          <a href="#" class="btn btn-text">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+ <!-- Services Section -->
+<section class="section">
+  <div class="container">
+    <h2 class="text-center">Our Core Services</h2>
+    <div class="services-grid">
+      <!-- Cloud Solutions -->
+      <div class="service-card">
+        <div class="service-card-content">
+          <i class="fas fa-cloud"></i>
+          <h4>Cloud Solutions</h4>
+          <ul>
+            <li>Cloud migration & strategy</li>
+            <li>Google Workspace & Microsoft 365</li>
+            <li>Hybrid cloud architecture</li>
+          </ul>
         </div>
       </div>
+      
+      <!-- Cybersecurity -->
+      <div class="service-card">
+        <div class="service-card-content">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Cybersecurity</h4>
+          <ul>
+            <li>Threat detection & prevention</li>
+            <li>Compliance management</li>
+            <li>Security awareness training</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Network Services -->
+      <div class="service-card">
+        <div class="service-card-content">
+          <i class="fas fa-network-wired"></i>
+          <h4>Network Services</h4>
+          <ul>
+            <li>Enterprise network design</li>
+            <li>Wi-Fi optimization</li>
+            <li>VPN & remote access</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Data Management -->
+      <div class="service-card">
+        <div class="service-card-content">
+          <i class="fas fa-database"></i>
+          <h4>Data Management</h4>
+          <ul>
+            <li>Backup & disaster recovery</li>
+            <li>Data analytics</li>
+            <li>Storage solutions</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Managed IT -->
+      <div class="service-card">
+        <div class="service-card-content">
+          <i class="fas fa-laptop-code"></i>
+          <h4>Managed IT</h4>
+          <ul>
+            <li>24/7 monitoring & support</li>
+            <li>Patch management</li>
+            <li>Help desk services</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Web & Mobile -->
+      <div class="service-card">
+        <div class="service-card-content">
+          <i class="fas fa-mobile-alt"></i>
+          <h4>Web & Mobile</h4>
+          <ul>
+            <li>Custom application development</li>
+            <li>Responsive web design</li>
+            <li>API integration</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- IT Consulting -->
+      <div class="service-card">
+        <div class="service-card-content">
+          <i class="fas fa-chart-line"></i>
+          <h4>IT Consulting</h4>
+          <ul>
+            <li>Technology roadmaps</li>
+            <li>Digital transformation</li>
+            <li>Vendor selection</li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- Disaster Recovery -->
+      <div class="service-card">
+        <div class="service-card-content">
+          <i class="fas fa-life-ring"></i>
+          <h4>Disaster Recovery</h4>
+          <ul>
+            <li>Business continuity planning</li>
+            <li>Automated backups</li>
+            <li>RTO/RPO optimization</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Add this as the 9th card in your services-grid -->
+	<div class="service-card">
+  		<div class="service-card-content">
+   		<i class="fas fa-robot"></i>
+    		<h4>AI Automation</h4>
+    		<ul>
+      		 <li>Chatbot integration</li>
+       	 	 <li>Process automation</li>
+      		 <li>Machine learning solutions</li>
+    		</ul>
+  	</div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Approach Section -->
-  <section class="section bg-light">
-    <div class="container">
-      <div class="grid two-col">
-        <div class="content">
-          <h2>Our Approach</h2>
-          <p>We don't just provide IT services - we become your technology partner. Our approach is built on three pillars:</p>
-          
-          <div class="approach-step">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <h3>Understand</h3>
-              <p>We take time to deeply understand your business objectives, challenges, and technology needs.</p>
-            </div>
-          </div>
-          
-          <div class="approach-step">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <h3>Design</h3>
-              <p>Our experts design tailored solutions that align with your goals and budget.</p>
-            </div>
-          </div>
-          
-          <div class="approach-step">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <h3>Deliver & Support</h3>
-              <p>We implement solutions efficiently and provide ongoing support to ensure success.</p>
-            </div>
+<section class="section bg-light approach-section">
+  <div class="container">
+    <div class="grid two-col">
+      <div class="content">
+        <h2>Our Approach</h2>
+        <p>We don't just provide IT services - we become your technology partner. Our approach is built on three pillars:</p>
+        
+        <div class="approach-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Understand</h3>
+            <p>We take time to deeply understand your business objectives, challenges, and technology needs.</p>
           </div>
         </div>
-        <div class="image">
-          <img src="images/services/approach.jpg" alt="Our team working together" loading="lazy">
+        
+        <div class="approach-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Design</h3>
+            <p>Our experts design tailored solutions that align with your goals and budget.</p>
+          </div>
+        </div>
+        
+        <div class="approach-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Deliver & Support</h3>
+            <p>We implement solutions efficiently and provide ongoing support to ensure success.</p>
+          </div>
         </div>
       </div>
+      
+      <div class="image">
+        <img src="images/services/approach.jpg" alt="IT team collaborating on technology strategy" loading="lazy">
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Industries Section -->
   <section class="section">
