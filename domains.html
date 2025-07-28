@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Domain Services | Birthmark IT Solutions</title>
   <link rel="stylesheet" href="css/style.css">
-  <!-- Same head content as index.html -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <!-- Announcement Bar -->
@@ -15,8 +16,10 @@
     </div>
   </div>
 
-  <!-- Navigation (same as index.html) -->
-  <nav class="navbar">...</nav>
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <!-- Same navigation as index.html -->
+  </nav>
 
   <!-- Domain Hero -->
   <section class="hero domains-hero">
@@ -24,6 +27,11 @@
       <h1>Domain Name Services</h1>
       <p class="subheading">Find and manage the perfect domain for your business</p>
     </div>
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/domains-hero-mobile.jpg">
+      <source media="(min-width: 769px)" srcset="images/domains-hero-desktop.jpg">
+      <img src="images/domains-hero-desktop.jpg" alt="" aria-hidden="true" class="hero-bg">
+    </picture>
   </section>
 
   <!-- Domain Search -->
@@ -31,7 +39,7 @@
     <div class="container">
       <h2 class="text-center">Find Your Perfect Domain</h2>
       <div class="domain-search-box">
-        <input type="text" placeholder="Search for a domain...">
+        <input type="text" placeholder="Search for a domain..." aria-label="Domain search">
         <button class="btn btn-primary">Search</button>
       </div>
       <div class="popular-tlds">
@@ -40,9 +48,11 @@
           <a href="#">.com <span>$12.99/yr</span></a>
           <a href="#">.net <span>$14.99/yr</span></a>
           <a href="#">.org <span>$12.99/yr</span></a>
+          <a href="#">.co.za <span>$9.99/yr</span></a>
           <a href="#">.io <span>$39.99/yr</span></a>
           <a href="#">.tech <span>$19.99/yr</span></a>
           <a href="#">.store <span>$24.99/yr</span></a>
+          <a href="#">.online <span>$14.99/yr</span></a>
         </div>
       </div>
     </div>
@@ -56,22 +66,123 @@
           <h2>Domain Transfer</h2>
           <p>Transfer your domain to Birthmark IT and enjoy better management tools and pricing.</p>
           <ul class="feature-list">
-            <li><i class="fas fa-check-circle"></i> Free domain locking</li>
-            <li><i class="fas fa-check-circle"></i> Free WHOIS privacy</li>
-            <li><i class="fas fa-check-circle"></i> Easy DNS management</li>
-            <li><i class="fas fa-check-circle"></i> Auto-renewal protection</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Free domain locking</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Free WHOIS privacy</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Easy DNS management</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Auto-renewal protection</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> 24/7 support</li>
           </ul>
           <a href="#" class="btn btn-primary">Transfer Your Domain</a>
         </div>
         <div class="image">
-          <img src="images/domains/transfer.jpg" alt="Domain Transfer">
+          <img src="images/domains/transfer.jpg" alt="Domain transfer process illustration" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer (same as index.html) -->
-  <footer class="footer">...</footer>
+  <!-- Domain Privacy -->
+  <section id="privacy" class="section">
+    <div class="container">
+      <div class="grid two-col reverse">
+        <div class="content">
+          <h2>Domain Privacy Protection</h2>
+          <p>Keep your personal information private and protect yourself from spam and scams with our WHOIS privacy service.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Hide your personal information</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Reduce spam and scams</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Prevent domain hijacking</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Free with most domains</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Add Privacy Protection</a>
+        </div>
+        <div class="image">
+          <img src="images/domains/privacy.jpg" alt="Privacy protection illustration" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TLDs Section -->
+  <section id="tlds" class="section bg-light">
+    <div class="container">
+      <h2 class="text-center">Domain Extensions</h2>
+      <div class="tld-categories">
+        <div class="tld-category">
+          <h3>Popular Extensions</h3>
+          <div class="tld-list">
+            <a href="#">.com <span>$12.99/yr</span></a>
+            <a href="#">.net <span>$14.99/yr</span></a>
+            <a href="#">.org <span>$12.99/yr</span></a>
+            <a href="#">.co.za <span>$9.99/yr</span></a>
+            <a href="#">.info <span>$10.99/yr</span></a>
+          </div>
+        </div>
+        <div class="tld-category">
+          <h3>Business</h3>
+          <div class="tld-list">
+            <a href="#">.business <span>$19.99/yr</span></a>
+            <a href="#">.store <span>$24.99/yr</span></a>
+            <a href="#">.shop <span>$29.99/yr</span></a>
+            <a href="#">.agency <span>$29.99/yr</span></a>
+            <a href="#">.consulting <span>$39.99/yr</span></a>
+          </div>
+        </div>
+        <div class="tld-category">
+          <h3>Tech</h3>
+          <div class="tld-list">
+            <a href="#">.tech <span>$19.99/yr</span></a>
+            <a href="#">.app <span>$24.99/yr</span></a>
+            <a href="#">.io <span>$39.99/yr</span></a>
+            <a href="#">.ai <span>$59.99/yr</span></a>
+            <a href="#">.dev <span>$19.99/yr</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DNS Management -->
+  <section class="section">
+    <div class="container">
+      <div class="grid two-col">
+        <div class="content">
+          <h2>Advanced DNS Management</h2>
+          <p>Take full control of your domain's DNS settings with our easy-to-use management tools.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Easy-to-use control panel</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> A, CNAME, MX, TXT records</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> URL forwarding</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Subdomain management</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> DNSSEC support</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Manage DNS</a>
+        </div>
+        <div class="image">
+          <img src="images/domains/dns.jpg" alt="DNS management interface" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta bg-primary">
+    <div class="container text-center">
+      <h2>Need Help Choosing a Domain?</h2>
+      <p>Our domain experts can help you find the perfect name for your business</p>
+      <div class="cta-buttons">
+        <a href="tel:+27674264241" class="btn btn-light">
+          <i class="fas fa-phone" aria-hidden="true"></i> Call Now
+        </a>
+        <a href="contact.html" class="btn btn-outline-light">Get Domain Advice</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- Same footer as index.html -->
+  </footer>
 
   <script src="js/main.js"></script>
 </body>
