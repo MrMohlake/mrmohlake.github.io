@@ -16,8 +16,10 @@
     </div>
   </div>
 
-  <!-- Navigation (same as index.html) -->
-  <nav class="navbar">...</nav>
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <!-- Same navigation as index.html -->
+  </nav>
 
   <!-- Marketing Hero -->
   <section class="hero marketing-hero">
@@ -25,6 +27,11 @@
       <h1>Results-Driven Digital Marketing</h1>
       <p class="subheading">Grow your online presence with our data-backed marketing strategies</p>
     </div>
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/marketing-hero-mobile.jpg">
+      <source media="(min-width: 769px)" srcset="images/marketing-hero-desktop.jpg">
+      <img src="images/marketing-hero-desktop.jpg" alt="" aria-hidden="true" class="hero-bg">
+    </picture>
   </section>
 
   <!-- Marketing Services -->
@@ -34,7 +41,7 @@
       <div class="grid three-col">
         <div class="service-card">
           <div class="service-icon">
-            <i class="fas fa-search-dollar"></i>
+            <i class="fas fa-search-dollar" aria-hidden="true"></i>
           </div>
           <h3>SEO Services</h3>
           <p>Improve your search rankings and organic traffic with our comprehensive SEO strategies.</p>
@@ -43,7 +50,7 @@
         
         <div class="service-card">
           <div class="service-icon">
-            <i class="fas fa-ad"></i>
+            <i class="fas fa-ad" aria-hidden="true"></i>
           </div>
           <h3>PPC Management</h3>
           <p>Maximize ROI from your Google Ads and social media advertising campaigns.</p>
@@ -52,7 +59,7 @@
         
         <div class="service-card">
           <div class="service-icon">
-            <i class="fas fa-envelope-open-text"></i>
+            <i class="fas fa-envelope-open-text" aria-hidden="true"></i>
           </div>
           <h3>Email Marketing</h3>
           <p>Convert more leads with targeted email campaigns and automation.</p>
@@ -70,16 +77,16 @@
           <h2>Search Engine Optimization</h2>
           <p>Our SEO services are designed to improve your website's visibility and drive qualified traffic to your business.</p>
           <ul class="feature-list">
-            <li><i class="fas fa-check-circle"></i> Comprehensive keyword research</li>
-            <li><i class="fas fa-check-circle"></i> On-page optimization</li>
-            <li><i class="fas fa-check-circle"></i> Technical SEO audits</li>
-            <li><i class="fas fa-check-circle"></i> Content strategy development</li>
-            <li><i class="fas fa-check-circle"></i> Monthly performance reporting</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Comprehensive keyword research</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> On-page optimization</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Technical SEO audits</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Content strategy development</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Monthly performance reporting</li>
           </ul>
           <a href="contact.html" class="btn btn-primary">Get SEO Consultation</a>
         </div>
         <div class="image">
-          <img src="images/marketing/seo-analytics.jpg" alt="SEO Analytics">
+          <img src="images/marketing/seo-analytics.jpg" alt="SEO analytics dashboard" loading="lazy">
         </div>
       </div>
     </div>
@@ -93,16 +100,93 @@
           <h2>Pay-Per-Click Advertising</h2>
           <p>We manage your paid advertising campaigns to ensure maximum return on your ad spend.</p>
           <ul class="feature-list">
-            <li><i class="fas fa-check-circle"></i> Google Ads management</li>
-            <li><i class="fas fa-check-circle"></i> Social media advertising</li>
-            <li><i class="fas fa-check-circle"></i> Conversion rate optimization</li>
-            <li><i class="fas fa-check-circle"></i> A/B testing</li>
-            <li><i class="fas fa-check-circle"></i> Transparent reporting</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Google Ads management</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Social media advertising</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Conversion rate optimization</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> A/B testing</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Transparent reporting</li>
           </ul>
           <a href="contact.html" class="btn btn-primary">Start Your Campaign</a>
         </div>
         <div class="image">
-          <img src="images/marketing/ppc-dashboard.jpg" alt="PPC Dashboard">
+          <img src="images/marketing/ppc-dashboard.jpg" alt="PPC campaign dashboard" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Email Marketing -->
+  <section id="email" class="section bg-light">
+    <div class="container">
+      <div class="grid two-col">
+        <div class="content">
+          <h2>Email Marketing</h2>
+          <p>Build relationships and drive sales with targeted email campaigns.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Custom email template design</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> List segmentation</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Automated workflows</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> A/B testing</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Performance analytics</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Launch Email Campaign</a>
+        </div>
+        <div class="image">
+          <img src="images/marketing/email.jpg" alt="Email marketing interface" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Media -->
+  <section class="section">
+    <div class="container">
+      <div class="grid two-col reverse">
+        <div class="content">
+          <h2>Social Media Marketing</h2>
+          <p>Build your brand and engage your audience across social platforms.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Content strategy</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Community management</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Paid social campaigns</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Influencer partnerships</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Performance reporting</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Grow Your Social Presence</a>
+        </div>
+        <div class="image">
+          <img src="images/marketing/social.jpg" alt="Social media platforms" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="section bg-light">
+    <div class="container">
+      <h2 class="text-center">Marketing Success Stories</h2>
+      <div class="grid two-col">
+        <div class="case-study">
+          <div class="case-header">
+            <img src="images/clients/client3.jpg" alt="CafeSpice logo" loading="lazy">
+            <div>
+              <h3>CafeSpice</h3>
+              <p class="industry">Restaurant</p>
+            </div>
+          </div>
+          <p>"Our online orders increased by 300% after implementing their digital marketing strategy."</p>
+          <a href="#" class="btn btn-outline">Read Case Study</a>
+        </div>
+        <div class="case-study">
+          <div class="case-header">
+            <img src="images/clients/client4.jpg" alt="UrbanFit logo" loading="lazy">
+            <div>
+              <h3>UrbanFit</h3>
+              <p class="industry">Fitness Studio</p>
+            </div>
+          </div>
+          <p>"Birthmark's social media campaigns helped us triple our membership sign-ups in 3 months."</p>
+          <a href="#" class="btn btn-outline">Read Case Study</a>
         </div>
       </div>
     </div>
@@ -114,16 +198,18 @@
       <h2>Ready to Grow Your Business Online?</h2>
       <p>Our marketing experts are ready to help you achieve your digital goals</p>
       <div class="cta-buttons">
-        <a href="tel:+15551234567" class="btn btn-light">
-          <i class="fas fa-phone"></i> Call Now: (555) 123-4567
+        <a href="tel:+27674264241" class="btn btn-light">
+          <i class="fas fa-phone" aria-hidden="true"></i> Call Now
         </a>
         <a href="contact.html" class="btn btn-outline-light">Get Free Audit</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer (same as index.html) -->
-  <footer class="footer">...</footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- Same footer as index.html -->
+  </footer>
 
   <script src="js/main.js"></script>
 </body>
