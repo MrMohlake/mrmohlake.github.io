@@ -5,64 +5,350 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IT Services | Birthmark IT Solutions</title>
   <link rel="stylesheet" href="css/style.css">
-  <!-- Same head content as index.html -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <!-- Announcement Bar -->
   <div class="announcement-bar">
     <div class="container">
-      <p>🔒 Free security audit with any new service contract! <a href="security.html">Learn more</a></p>
+      <p>🔒 New: Enhanced Security Packages now available! <a href="#">Learn more</a></p>
     </div>
   </div>
 
-  <!-- Navigation (same as index.html) -->
-  <nav class="navbar">...</nav>
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Birthmark IT Solutions Home">
+        <i class="fas fa-server" aria-hidden="true"></i>
+        <span>Birthmark IT Solutions</span>
+      </a>
+      
+      <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
+        <span class="sr-only">Menu</span>
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      
+      <ul class="nav-list" id="main-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="hosting.html">Hosting</a></li>
+        <li><a href="domains.html">Domains</a></li>
+        <li class="dropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false">
+            Resources <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu" role="menu">
+            <div class="dropdown-container">
+              <div class="dropdown-column">
+                <h4>Resources</h4>
+                <ul>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="faq.html">FAQs</a></li>
+                  <li><a href="#">Case Studies</a></li>
+                  <li><a href="#">Whitepapers</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>Learning</h4>
+                <ul>
+                  <li><a href="#">Webinars</a></li>
+                  <li><a href="#">Tutorials</a></li>
+                  <li><a href="#">Guides</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li class="nav-cta">
+          <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- Services Hero -->
   <section class="hero services-hero">
     <div class="container">
       <h1>Comprehensive IT Services</h1>
-      <p class="subheading">Tailored solutions for businesses of all sizes</p>
+      <p class="subheading">End-to-end technology solutions for your business</p>
+    </div>
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/services-hero-mobile.jpg">
+      <source media="(min-width: 769px)" srcset="images/services-hero-desktop.jpg">
+      <img src="images/services-hero-desktop.jpg" alt="" aria-hidden="true" class="hero-bg">
+    </picture>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center">Our Core Services</h2>
+      <div class="grid three-col">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-cloud" aria-hidden="true"></i>
+          </div>
+          <h3>Cloud Solutions</h3>
+          <p>Scalable cloud infrastructure, migration, and management services tailored to your business needs.</p>
+          <a href="#" class="btn btn-text">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+          </div>
+          <h3>Cybersecurity</h3>
+          <p>Comprehensive security solutions including threat detection, vulnerability assessments, and compliance.</p>
+          <a href="#" class="btn btn-text">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-network-wired" aria-hidden="true"></i>
+          </div>
+          <h3>Network Services</h3>
+          <p>Design, implementation, and management of secure, high-performance business networks.</p>
+          <a href="#" class="btn btn-text">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-database" aria-hidden="true"></i>
+          </div>
+          <h3>Data Management</h3>
+          <p>Data storage, backup, recovery, and analytics solutions to turn data into business value.</p>
+          <a href="#" class="btn btn-text">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-laptop-code" aria-hidden="true"></i>
+          </div>
+          <h3>Managed IT</h3>
+          <p>Proactive monitoring, maintenance, and support for your critical IT infrastructure.</p>
+          <a href="#" class="btn btn-text">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+          </div>
+          <h3>Web & Mobile</h3>
+          <p>Custom web and mobile application development to enhance your digital presence.</p>
+          <a href="#" class="btn btn-text">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Services Tabs -->
+  <!-- Approach Section -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="grid two-col">
+        <div class="content">
+          <h2>Our Approach</h2>
+          <p>We don't just provide IT services - we become your technology partner. Our approach is built on three pillars:</p>
+          
+          <div class="approach-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Understand</h3>
+              <p>We take time to deeply understand your business objectives, challenges, and technology needs.</p>
+            </div>
+          </div>
+          
+          <div class="approach-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Design</h3>
+              <p>Our experts design tailored solutions that align with your goals and budget.</p>
+            </div>
+          </div>
+          
+          <div class="approach-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Deliver & Support</h3>
+              <p>We implement solutions efficiently and provide ongoing support to ensure success.</p>
+            </div>
+          </div>
+        </div>
+        <div class="image">
+          <img src="images/services/approach.jpg" alt="Our team working together" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries Section -->
   <section class="section">
     <div class="container">
-      <div class="service-tabs">
-        <button class="tab-btn active" data-tab="managed">Managed IT</button>
-        <button class="tab-btn" data-tab="cloud">Cloud Solutions</button>
-        <button class="tab-btn" data-tab="security">Security</button>
-        <button class="tab-btn" data-tab="consulting">Consulting</button>
-      </div>
-
-      <div id="managed" class="tab-content active">
-        <div class="grid two-col">
-          <div class="content">
-            <h2>Managed IT Services</h2>
-            <p>Outsource your IT operations to our team of experts and focus on your core business.</p>
-            <ul class="feature-list">
-              <li><i class="fas fa-check-circle"></i> 24/7 Monitoring and Support</li>
-              <li><i class="fas fa-check-circle"></i> Proactive Maintenance</li>
-              <li><i class="fas fa-check-circle"></i> Help Desk Services</li>
-              <li><i class="fas fa-check-circle"></i> Network Management</li>
-              <li><i class="fas fa-check-circle"></i> Regular Reporting</li>
-            </ul>
-            <a href="contact.html" class="btn btn-primary">Get Managed IT</a>
+      <h2 class="text-center">Industries We Serve</h2>
+      <div class="grid four-col">
+        <div class="industry-card">
+          <div class="industry-icon">
+            <i class="fas fa-university" aria-hidden="true"></i>
           </div>
-          <div class="image">
-            <img src="images/services/managed-it.jpg" alt="Managed IT Services">
+          <h3>Financial Services</h3>
+          <p>Secure, compliant solutions for banks, insurers, and fintech companies.</p>
+        </div>
+        
+        <div class="industry-card">
+          <div class="industry-icon">
+            <i class="fas fa-hospital" aria-hidden="true"></i>
+          </div>
+          <h3>Healthcare</h3>
+          <p>HIPAA-compliant systems for hospitals, clinics, and medical practices.</p>
+        </div>
+        
+        <div class="industry-card">
+          <div class="industry-icon">
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+          </div>
+          <h3>Retail & E-commerce</h3>
+          <p>Scalable infrastructure for online stores and retail operations.</p>
+        </div>
+        
+        <div class="industry-card">
+          <div class="industry-icon">
+            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+          </div>
+          <h3>Education</h3>
+          <p>Technology solutions for schools, universities, and training providers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="section bg-light">
+    <div class="container">
+      <h2 class="text-center">Success Stories</h2>
+      <div class="grid three-col">
+        <div class="case-study-card">
+          <div class="case-study-image">
+            <img src="images/cases/retail.jpg" alt="Retail case study" loading="lazy">
+          </div>
+          <div class="case-study-content">
+            <h3>Retail Chain Migration</h3>
+            <p>Migrated 150-store retail chain to cloud infrastructure with zero downtime.</p>
+            <a href="#" class="btn btn-text">Read Case Study <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        
+        <div class="case-study-card">
+          <div class="case-study-image">
+            <img src="images/cases/finance.jpg" alt="Finance case study" loading="lazy">
+          </div>
+          <div class="case-study-content">
+            <h3>Bank Security Overhaul</h3>
+            <p>Implemented comprehensive security framework for regional bank.</p>
+            <a href="#" class="btn btn-text">Read Case Study <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        
+        <div class="case-study-card">
+          <div class="case-study-image">
+            <img src="images/cases/healthcare.jpg" alt="Healthcare case study" loading="lazy">
+          </div>
+          <div class="case-study-content">
+            <h3>Hospital System Upgrade</h3>
+            <p>Modernized IT infrastructure for healthcare provider network.</p>
+            <a href="#" class="btn btn-text">Read Case Study <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta bg-primary">
+    <div class="container text-center">
+      <h2>Ready to Transform Your IT?</h2>
+      <p>Schedule a free consultation with our technology experts</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-light">Get Started</a>
+        <a href="tel:+27674264241" class="btn btn-outline-light">
+          <i class="fas fa-phone" aria-hidden="true"></i> Call Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="domains.html">Domains</a></li>
+            <li><a href="hosting.html">Hosting</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="marketing.html">Marketing</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">Help Center</a></li>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">Developer API</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          </div>
+          <div class="newsletter">
+            <p>Subscribe to our newsletter</p>
+            <form class="newsletter-form" aria-label="Newsletter subscription">
+              <input type="email" placeholder="Your email" required aria-label="Email address">
+              <button type="submit" aria-label="Subscribe"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+            </form>
           </div>
         </div>
       </div>
 
-      <!-- Other tab contents -->
+      <!-- Ticker Strip -->
+      <div class="ticker-strip">
+        <div class="ticker-content">
+          <span>Trusted by businesses in South Africa</span>
+          <span>24/7 Expert Support</span>
+          <span>99.9% Uptime Guarantee</span>
+          <span>Enterprise-grade Security</span>
+        </div>
+      </div>
       
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Birthmark IT Solutions. All rights reserved.</p>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
     </div>
-  </section>
-
-  <!-- Footer (same as index.html) -->
-  <footer class="footer">...</footer>
+  </footer>
 
   <script src="js/main.js"></script>
 </body>
