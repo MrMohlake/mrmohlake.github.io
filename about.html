@@ -5,64 +5,881 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | Birthmark IT Solutions</title>
   <link rel="stylesheet" href="css/style.css">
-  <!-- Same head content as index.html -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Additional styles for service card hover effects */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .service-card {
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      background: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      height: 100%;
+      border: 1px solid #eee;
+    }
+    
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-card:hover::before {
+      height: 8px;
+    }
+    
+    .service-card i {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .service-card:hover i {
+      transform: scale(1.1);
+    }
+    
+    /* Different colors for each service card */
+    .service-card:nth-child(1)::before {
+      background: linear-gradient(90deg, #4a6bff, #6c8eff);
+    }
+    
+    .service-card:nth-child(1) i {
+      color: #4a6bff;
+    }
+    
+    .service-card:nth-child(2)::before {
+      background: linear-gradient(90deg, #00c6fb, #005bea);
+    }
+    
+    .service-card:nth-child(2) i {
+      color: #00c6fb;
+    }
+    
+    .service-card:nth-child(3)::before {
+      background: linear-gradient(90deg, #f54ea2, #ff7676);
+    }
+    
+    .service-card:nth-child(3) i {
+      color: #f54ea2;
+    }
+    
+    .service-card:nth-child(4)::before {
+      background: linear-gradient(90deg, #17ead9, #6078ea);
+    }
+    
+    .service-card:nth-child(4) i {
+      color: #17ead9;
+    }
+    
+    .service-card-content {
+      padding: 2rem;
+      height: 100%;
+    }
+    
+    .service-card h4 {
+      margin-bottom: 1rem;
+      color: #333;
+      transition: all 0.3s ease;
+    }
+    
+    .service-card:hover h4 {
+      color: #222;
+    }
+    
+    .service-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    
+    .service-card li {
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 1.5rem;
+      line-height: 1.5;
+    }
+    
+    .service-card li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: currentColor;
+      font-weight: bold;
+    }
+
+    /* Additional styling for the about page */
+    .about-hero {
+      position: relative;
+      color: white;
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .bg-light {
+      background-color: #f9f9f9;
+    }
+
+    .bg-primary {
+      background-color: #4a6bff;
+      color: white;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .two-col {
+      grid-template-columns: 2fr 1fr;
+    }
+
+    .three-col {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      display: block;
+      color: #4a6bff;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+
+    .section-description {
+      max-width: 600px;
+      margin: 0 auto;
+      color: #666;
+    }
+
+    .lead {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .sidebar-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+
+    .checklist li {
+      margin-bottom: 0.75rem;
+      padding-left: 2rem;
+      position: relative;
+    }
+
+    .checklist i {
+      position: absolute;
+      left: 0;
+      color: #4a6bff;
+    }
+
+    .client-testimonial {
+      background: #4a6bff;
+      color: white;
+    }
+
+    .client-info {
+      display: flex;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    .client-info img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 1rem;
+      object-fit: cover;
+    }
+
+    .client-info h4 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .client-info span {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .team-member {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+
+    .member-image {
+      position: relative;
+    }
+
+    .member-image img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .social-links {
+      position: absolute;
+      bottom: 1rem;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .team-member:hover .social-links {
+      opacity: 1;
+    }
+
+    .social-links a {
+      color: white;
+      background: rgba(0, 0, 0, 0.6);
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: #4a6bff;
+    }
+
+    .member-info {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .member-info h3 {
+      margin: 0 0 0.5rem 0;
+    }
+
+    .position {
+      color: #4a6bff;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .bio {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .value-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .value-icon {
+      width: 70px;
+      height: 70px;
+      background: #f0f4ff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .value-icon i {
+      font-size: 1.8rem;
+      color: #4a6bff;
+    }
+
+    .client-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .client-logos img {
+      height: 40px;
+      width: auto;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .client-logos img:hover {
+      opacity: 1;
+    }
+
+    .cta {
+      text-align: center;
+      padding: 5rem 0;
+    }
+
+    .cta h2 {
+      margin-bottom: 1rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #4a6bff;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #3a5bef;
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: white;
+      color: #4a6bff;
+    }
+
+    .btn-light:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-light {
+      border: 2px solid white;
+      color: white;
+      background: transparent;
+    }
+
+    .btn-outline-light:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Shared Navigation -->
-  <div class="announcement-bar">...</div>
-  <nav class="navbar">...</nav>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <p>🌟 Now hiring: Join our growing team! <a href="#">View openings</a></p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Birthmark IT Solutions Home">
+        <i class="fas fa-server" aria-hidden="true"></i>
+        <span>Birthmark IT Solutions</span>
+      </a>
+      
+      <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
+        <span class="sr-only">Menu</span>
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      
+      <ul class="nav-list" id="main-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="hosting.html">Hosting</a></li>
+        <li><a href="domains.html">Domains</a></li>
+        <li class="dropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false">
+            Resources <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu" role="menu">
+            <div class="dropdown-container">
+              <div class="dropdown-column">
+                <h4>Resources</h4>
+                <ul>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="faq.html">FAQs</a></li>
+                  <li><a href="#">Case Studies</a></li>
+                  <li><a href="#">Whitepapers</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>Learning</h4>
+                <ul>
+                  <li><a href="#">Webinars</a></li>
+                  <li><a href="#">Tutorials</a></li>
+                  <li><a href="#">Guides</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li class="nav-cta">
+          <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- About Hero -->
   <section class="hero about-hero">
     <div class="container">
-      <h1>Our Story</h1>
-      <p>Building the future of enterprise technology since 2010</p>
+      <div class="hero-content">
+        <h1>Our Story</h1>
+        <p class="subheading">Building the future of enterprise technology since 2016</p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">7+</span>
+            <span class="stat-label">Years in Business</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Clients Served</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Support</span>
+          </div>
+        </div>
+      </div>
     </div>
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/about-hero-mobile.jpg">
+      <source media="(min-width: 769px)" srcset="images/about-hero-desktop.jpg">
+      <img src="images/about-hero-desktop.jpg" alt="Team collaborating in modern office" class="hero-bg">
+    </picture>
+    <div class="hero-overlay"></div>
   </section>
 
   <!-- About Content -->
-  <section class="section">
+  <section class="section about-intro">
     <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">About Us</span>
+        <h2>Who We Are</h2>
+      </div>
       <div class="grid two-col">
         <div class="about-content">
-          <h2>Who We Are</h2>
-          <p>Founded in 2010, Birthmark IT Solutions began as a small team of passionate technologists with a vision to make enterprise-grade IT accessible to businesses of all sizes.</p>
-          <p>Today, we're a leading provider of cloud infrastructure and managed services, supporting over 10,000 clients across 15 countries.</p>
-          <div class="stats-grid">
-            <div class="stat-item">
-              <div class="stat-number">10,000+</div>
-              <div class="stat-label">Clients Worldwide</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">99.99%</div>
-              <div class="stat-label">Uptime Average</div>
+          <p class="lead">Birthmark IT Solutions is the dedicated IT division of Birthmark Trading Enterprise (PTY) LTD, a South African company established in 2016. Our mission is to empower businesses through smart, scalable, and secure technology solutions tailored to their unique needs.</p>
+          
+          <div class="services-highlight">
+            <h3>Our Comprehensive IT Services</h3>
+            <div class="services-grid">
+              <div class="service-card">
+                <div class="service-card-content">
+                  <i class="fas fa-network-wired"></i>
+                  <h4>Network Solutions</h4>
+                  <ul>
+                    <li>Network design, setup, and maintenance</li>
+                    <li>Printer/scanner network integration</li>
+                    <li>Remote access and VPN setups</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="service-card">
+                <div class="service-card-content">
+                  <i class="fas fa-cloud"></i>
+                  <h4>Cloud Services</h4>
+                  <ul>
+                    <li>Google Workspace & Microsoft 365</li>
+                    <li>Cloud backups and migrations</li>
+                    <li>Email configuration and migration</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="service-card">
+                <div class="service-card-content">
+                  <i class="fas fa-shield-alt"></i>
+                  <h4>Security</h4>
+                  <ul>
+                    <li>Cybersecurity assessments</li>
+                    <li>Security implementation</li>
+                    <li>Enterprise-grade protection</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="service-card">
+                <div class="service-card-content">
+                  <i class="fas fa-server"></i>
+                  <h4>Infrastructure</h4>
+                  <ul>
+                    <li>Hardware procurement</li>
+                    <li>Software deployment</li>
+                    <li>Web hosting & domains</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
+          
+          <div class="mission-statement">
+            <h3>Our Mission</h3>
+            <p>With a deep understanding of the digital landscape, we serve clients across various sectors—helping them optimize operations, reduce downtime, and scale with confidence. Whether you're a startup or a growing enterprise, our goal is to provide dependable, future-ready solutions backed by responsive support.</p>
+            <p>At Birthmark IT Solutions, we combine technical expertise with the integrity and business experience of our parent company, Birthmark Trading Enterprise, to deliver services that make technology work for you.</p>
+          </div>
         </div>
-        <div class="about-image">
-          <img src="images/about-office.jpg" alt="Our Headquarters">
+        
+        <div class="about-sidebar">
+          <div class="sidebar-card">
+            <h3>Why Choose Us?</h3>
+            <ul class="checklist">
+              <li><i class="fas fa-check-circle"></i> Local South African expertise</li>
+              <li><i class="fas fa-check-circle"></i> Enterprise-grade solutions</li>
+              <li><i class="fas fa-check-circle"></i> 24/7 technical support</li>
+              <li><i class="fas fa-check-circle"></i> Customized service packages</li>
+              <li><i class="fas fa-check-circle"></i> Proven track record</li>
+            </ul>
+          </div>
+          
+          <div class="sidebar-card client-testimonial">
+            <div class="testimonial-content">
+              <p>"Birthmark IT Solutions transformed our network infrastructure with minimal downtime. Their team is knowledgeable and responsive."</p>
+              <div class="client-info">
+                <img src="images/client-thumbnail.jpg" alt="Client portrait">
+                <div>
+                  <h4>Thando Nkosi</h4>
+                  <span>CEO, Urban Logistics</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Leadership Team -->
-  <section class="section bg-light">
+  <section class="section bg-light team-section">
     <div class="container">
-      <h2 class="text-center">Meet Our Leadership Team</h2>
+      <div class="section-header text-center">
+        <span class="section-subtitle">Our Experts</span>
+        <h2>Meet Our Leadership Team</h2>
+        <p class="section-description">A team of passionate professionals dedicated to your success</p>
+      </div>
       <div class="team-grid">
         <div class="team-member">
-          <img src="images/team/person1.jpg" alt="Zinhle Mohlake">
-          <h3>Zinhle Mohlake</h3>
-          <p class="position">Founder & CEO</p>
-          <p class="bio">10+ years in Enterprise Technology Infrastructure</p>
+          <div class="member-image">
+            <img src="images/team/zinhle.jpg" alt="Zinhle Mohlake" loading="lazy">
+            <div class="social-links">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h3>Zinhle Mohlake</h3>
+            <p class="position">Founder & CEO</p>
+            <p class="bio">10+ years in Enterprise Technology Infrastructure</p>
+          </div>
         </div>
-        <!-- Add 3 more team members -->
+        <div class="team-member">
+          <div class="member-image">
+            <img src="images/team/mpho.jpg" alt="Mpho Mohlake" loading="lazy">
+            <div class="social-links">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h3>Mpho Mohlake</h3>
+            <p class="position">CTO</p>
+            <p class="bio">Cloud Architecture Specialist</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="member-image">
+            <img src="images/team/siya.jpg" alt="Siyabonga Dube" loading="lazy">
+            <div class="social-links">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h3>Siyabonga Dube</h3>
+            <p class="position">Head of Operations</p>
+            <p class="bio">IT Service Management Expert</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="member-image">
+            <img src="images/team/mike.jpg" alt="Mike Goolam" loading="lazy">
+            <div class="social-links">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+          <div class="member-info">
+            <h3>Mike Goolam</h3>
+            <p class="position">Head of Security</p>
+            <p class="bio">Cybersecurity Specialist</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Shared Footer -->
-  <footer class="footer">...</footer>
+  <!-- Values Section -->
+  <section class="section values-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">Our Foundation</span>
+        <h2>Our Core Values</h2>
+        <p class="section-description">The principles that guide everything we do</p>
+      </div>
+      <div class="grid three-col">
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+          </div>
+          <h3>Integrity</h3>
+          <p>We do what's right, even when no one is watching. Our clients trust us with their critical systems, and we honor that trust.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          <h3>Innovation</h3>
+          <p>We constantly push boundaries to deliver cutting-edge solutions that give our clients a competitive advantage.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <i class="fas fa-hands-helping" aria-hidden="true"></i>
+          </div>
+          <h3>Partnership</h3>
+          <p>Your success is our success. We work as an extension of your team to achieve your business goals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Section -->
+  <section class="section clients-section bg-light">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-subtitle">Trusted By</span>
+        <h2>Our Valued Clients</h2>
+      </div>
+      <div class="client-logos">
+        <img src="images/clients/client1.png" alt="Client logo" loading="lazy">
+        <img src="images/clients/client2.png" alt="Client logo" loading="lazy">
+        <img src="images/clients/client3.png" alt="Client logo" loading="lazy">
+        <img src="images/clients/client4.png" alt="Client logo" loading="lazy">
+        <img src="images/clients/client5.png" alt="Client logo" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+<section class="section cta bg-primary">
+  <div class="container text-center">
+    <h2>Ready to Work With Us?</h2>
+    <p>Discover how our team can help transform your business technology</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-light">Get in Touch</a>
+      <a href="services.html" class="btn btn-outline-light">Explore Services</a>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="domains.html">Domains</a></li>
+            <li><a href="hosting.html">Hosting</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="marketing.html">Marketing</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">Help Center</a></li>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">Developer API</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          </div>
+          <div class="newsletter">
+            <p>Subscribe to our newsletter</p>
+            <form class="newsletter-form" aria-label="Newsletter subscription">
+              <input type="email" placeholder="Your email" required aria-label="Email address">
+              <button type="submit" aria-label="Subscribe"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticker Strip -->
+      <div class="ticker-strip">
+        <div class="ticker-content">
+          <span>Trusted by businesses in South Africa</span>
+          <span>24/7 Expert Support</span>
+          <span>99.9% Uptime Guarantee</span>
+          <span>Enterprise-grade Security</span>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Birthmark IT Solutions. All rights reserved.</p>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Simple script to update copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
