@@ -3,102 +3,336 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cloud Hosting | Birthmark IT Solutions</title>
+  <title>Web Hosting Services | Birthmark IT Solutions</title>
   <link rel="stylesheet" href="css/style.css">
-  <!-- Same head content as index.html -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <!-- Shared Navigation -->
-  <div class="announcement-bar">...</div>
-  <nav class="navbar">...</nav>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <p>🚀 Get 50% off your first year of hosting! Use code: HOST50 at checkout</p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Birthmark IT Solutions Home">
+        <i class="fas fa-server" aria-hidden="true"></i>
+        <span>Birthmark IT Solutions</span>
+      </a>
+      
+      <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
+        <span class="sr-only">Menu</span>
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      
+      <ul class="nav-list" id="main-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="hosting.html" class="active">Hosting</a></li>
+        <li><a href="domains.html">Domains</a></li>
+        <li class="dropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false">
+            Resources <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu" role="menu">
+            <div class="dropdown-container">
+              <div class="dropdown-column">
+                <h4>Resources</h4>
+                <ul>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="faq.html">FAQs</a></li>
+                  <li><a href="#">Case Studies</a></li>
+                  <li><a href="#">Whitepapers</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>Learning</h4>
+                <ul>
+                  <li><a href="#">Webinars</a></li>
+                  <li><a href="#">Tutorials</a></li>
+                  <li><a href="#">Guides</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li class="nav-cta">
+          <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- Hosting Hero -->
   <section class="hero hosting-hero">
     <div class="container">
-      <h1>Enterprise Cloud Hosting</h1>
-      <p>Scalable, secure, and reliable infrastructure for your business</p>
+      <h1>Premium Web Hosting</h1>
+      <p class="subheading">Fast, secure, and reliable hosting solutions for your business</p>
     </div>
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/hosting-hero-mobile.jpg">
+      <source media="(min-width: 769px)" srcset="images/hosting-hero-desktop.jpg">
+      <img src="images/hosting-hero-desktop.jpg" alt="" aria-hidden="true" class="hero-bg">
+    </picture>
   </section>
 
-  <!-- Pricing Plans -->
+  <!-- Hosting Plans -->
   <section class="section">
     <div class="container">
       <h2 class="text-center">Choose Your Hosting Plan</h2>
-      <div class="pricing-toggle">
-        <span>Monthly</span>
-        <label class="switch">
-          <input type="checkbox" id="billingToggle">
-          <span class="slider"></span>
-        </label>
-        <span>Annual (Save 20%)</span>
+      <div class="grid three-col">
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Starter</h3>
+            <p>Perfect for small websites</p>
+            <div class="price">
+              <span class="currency">R</span>
+              <span class="amount">99</span>
+              <span class="period">/mo</span>
+            </div>
+          </div>
+          <ul class="features">
+            <li><i class="fas fa-check" aria-hidden="true"></i> 1 Website</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> 10GB SSD Storage</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Unmetered Bandwidth</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Free SSL Certificate</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> 1 Free Domain (1 year)</li>
+          </ul>
+          <a href="#" class="btn btn-outline">Get Started</a>
+        </div>
+        
+        <div class="pricing-card featured">
+          <div class="popular-badge">Most Popular</div>
+          <div class="pricing-header">
+            <h3>Business</h3>
+            <p>Ideal for growing businesses</p>
+            <div class="price">
+              <span class="currency">R</span>
+              <span class="amount">199</span>
+              <span class="period">/mo</span>
+            </div>
+          </div>
+          <ul class="features">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Unlimited Websites</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> 50GB SSD Storage</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Unmetered Bandwidth</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Free SSL Certificate</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Free Domain (1 year)</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Daily Backups</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Get Started</a>
+        </div>
+        
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Enterprise</h3>
+            <p>For high-traffic sites</p>
+            <div class="price">
+              <span class="currency">R</span>
+              <span class="amount">499</span>
+              <span class="period">/mo</span>
+            </div>
+          </div>
+          <ul class="features">
+            <li><i class="fas fa-check" aria-hidden="true"></i> Unlimited Websites</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> 200GB SSD Storage</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Unmetered Bandwidth</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Free SSL Certificate</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Free Domain (1 year)</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Daily Backups</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> Dedicated Resources</li>
+          </ul>
+          <a href="#" class="btn btn-outline">Get Started</a>
+        </div>
       </div>
-      
-      <!-- Replace existing pricing-grid -->
-<div class="pricing-grid">
-  <div class="pricing-card">
-    <h3>Starter</h3>
-    <div class="price monthly">$29.99<span>/mo</span></div>
-    <div class="price annually">$24.99<span>/mo</span></div>
-    <ul class="features">
-      <li><i class="fas fa-check"></i> 1 TB Storage</li>
-      <li><i class="fas fa-check"></i> 10 TB Bandwidth</li>
-      <li><i class="fas fa-check"></i> 5 Email Accounts</li>
-      <li><i class="fas fa-check"></i> 1 Website</li>
-      <li><i class="fas fa-check"></i> 24/7 Support</li>
-    </ul>
-    <a href="#" class="btn btn-outline">Select Plan</a>
-  </div>
-  
-  <div class="pricing-card popular">
-    <div class="popular-badge">Most Popular</div>
-    <h3>Business</h3>
-    <div class="price monthly">$59.99<span>/mo</span></div>
-    <div class="price annually">$49.99<span>/mo</span></div>
-    <ul class="features">
-      <li><i class="fas fa-check"></i> 5 TB Storage</li>
-      <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
-      <li><i class="fas fa-check"></i> Unlimited Email</li>
-      <li><i class="fas fa-check"></i> 10 Websites</li>
-      <li><i class="fas fa-check"></i> Free SSL</li>
-      <li><i class="fas fa-check"></i> Daily Backups</li>
-    </ul>
-    <a href="#" class="btn btn-primary">Select Plan</a>
-  </div>
-  
-  <div class="pricing-card">
-    <h3>Enterprise</h3>
-    <div class="price monthly">$99.99<span>/mo</span></div>
-    <div class="price annually">$79.99<span>/mo</span></div>
-    <ul class="features">
-      <li><i class="fas fa-check"></i> 10 TB Storage</li>
-      <li><i class="fas fa-check"></i> Unlimited Bandwidth</li>
-      <li><i class="fas fa-check"></i> Unlimited Email</li>
-      <li><i class="fas fa-check"></i> Unlimited Websites</li>
-      <li><i class="fas fa-check"></i> Free CDN</li>
-      <li><i class="fas fa-check"></i> Dedicated Resources</li>
-      <li><i class="fas fa-check"></i> Priority Support</li>
-    </ul>
-    <a href="#" class="btn btn-outline">Select Plan</a>
-  </div>
-</div>
+    </div>
   </section>
 
   <!-- Features Section -->
   <section class="section bg-light">
     <div class="container">
-      <h2 class="text-center">Premium Hosting Features</h2>
-      <div class="features-grid">
-        <div class="feature">
-          <i class="fas fa-server"></i>
-          <h3>SSD Storage</h3>
-          <p>Blazing-fast NVMe SSD storage for optimal performance</p>
+      <h2 class="text-center">Why Choose Our Hosting?</h2>
+      <div class="grid three-col">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-tachometer-alt" aria-hidden="true"></i>
+          </div>
+          <h3>Blazing Fast Speeds</h3>
+          <p>Our SSD-powered servers and optimized stack ensure your website loads in milliseconds.</p>
         </div>
-        <!-- Add 5 more features -->
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+          </div>
+          <h3>Enterprise Security</h3>
+          <p>Free SSL, DDoS protection, and malware scanning keep your site safe from threats.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-headset" aria-hidden="true"></i>
+          </div>
+          <h3>24/7 Expert Support</h3>
+          <p>Our hosting experts are available round the clock to assist you with any issues.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Shared Footer -->
-  <footer class="footer">...</footer>
+  <!-- Hosting Types -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center">Specialized Hosting Solutions</h2>
+      <div class="grid three-col">
+        <div class="hosting-type-card">
+          <div class="hosting-type-image">
+            <img src="images/hosting/wordpress.jpg" alt="WordPress hosting" loading="lazy">
+          </div>
+          <div class="hosting-type-content">
+            <h3>WordPress Hosting</h3>
+            <p>Optimized for WordPress with automatic updates, staging, and specialized caching.</p>
+            <a href="#" class="btn btn-text">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        
+        <div class="hosting-type-card">
+          <div class="hosting-type-image">
+            <img src="images/hosting/vps.jpg" alt="VPS hosting" loading="lazy">
+          </div>
+          <div class="hosting-type-content">
+            <h3>VPS Hosting</h3>
+            <p>Virtual private servers with dedicated resources and full root access.</p>
+            <a href="#" class="btn btn-text">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        
+        <div class="hosting-type-card">
+          <div class="hosting-type-image">
+            <img src="images/hosting/cloud.jpg" alt="Cloud hosting" loading="lazy">
+          </div>
+          <div class="hosting-type-content">
+            <h3>Cloud Hosting</h3>
+            <p>Scalable cloud infrastructure that grows with your business needs.</p>
+            <a href="#" class="btn btn-text">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Migration Section -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="grid two-col">
+        <div class="content">
+          <h2>Free Website Migration</h2>
+          <p>Let our experts handle your website transfer for free. We'll move your site to our servers with zero downtime.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> No additional cost</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Zero downtime guarantee</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> All CMS supported</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Done by migration experts</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Request Migration</a>
+        </div>
+        <div class="image">
+          <img src="images/hosting/migration.jpg" alt="Website migration process" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta bg-primary">
+    <div class="container text-center">
+      <h2>Not Sure Which Plan You Need?</h2>
+      <p>Our hosting experts can help you choose the perfect solution for your website</p>
+      <div class="cta-buttons">
+        <a href="tel:+27674264241" class="btn btn-light">
+          <i class="fas fa-phone" aria-hidden="true"></i> Call Now
+        </a>
+        <a href="contact.html" class="btn btn-outline-light">Get Hosting Advice</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="domains.html">Domains</a></li>
+            <li><a href="hosting.html">Hosting</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="marketing.html">Marketing</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">Help Center</a></li>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">Developer API</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          </div>
+          <div class="newsletter">
+            <p>Subscribe to our newsletter</p>
+            <form class="newsletter-form" aria-label="Newsletter subscription">
+              <input type="email" placeholder="Your email" required aria-label="Email address">
+              <button type="submit" aria-label="Subscribe"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticker Strip -->
+      <div class="ticker-strip">
+        <div class="ticker-content">
+          <span>Trusted by businesses in South Africa</span>
+          <span>24/7 Expert Support</span>
+          <span>99.9% Uptime Guarantee</span>
+          <span>Enterprise-grade Security</span>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Birthmark IT Solutions. All rights reserved.</p>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
