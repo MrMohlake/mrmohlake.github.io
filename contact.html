@@ -5,18 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Birthmark IT Solutions</title>
   <link rel="stylesheet" href="css/style.css">
-  <!-- Same head content as index.html -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <!-- Announcement Bar -->
   <div class="announcement-bar">
     <div class="container">
-      <p>📞 Need immediate help? Call us 24/7: (555) 123-4567</p>
+      <p>📞 Need immediate help? Call us 24/7: +27 76 426 4241</p>
     </div>
   </div>
 
-  <!-- Navigation (same as index.html) -->
-  <nav class="navbar">...</nav>
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Birthmark IT Solutions Home">
+        <i class="fas fa-server" aria-hidden="true"></i>
+        <span>Birthmark IT Solutions</span>
+      </a>
+      
+      <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
+        <span class="sr-only">Menu</span>
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+      
+      <ul class="nav-list" id="main-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="hosting.html">Hosting</a></li>
+        <li><a href="domains.html">Domains</a></li>
+        <li class="dropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false">
+            Resources <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu" role="menu">
+            <div class="dropdown-container">
+              <div class="dropdown-column">
+                <h4>Resources</h4>
+                <ul>
+                  <li><a href="blog.html">Blog</a></li>
+                  <li><a href="faq.html">FAQs</a></li>
+                  <li><a href="#">Case Studies</a></li>
+                  <li><a href="#">Whitepapers</a></li>
+                </ul>
+              </div>
+              <div class="dropdown-column">
+                <h4>Learning</h4>
+                <ul>
+                  <li><a href="#">Webinars</a></li>
+                  <li><a href="#">Tutorials</a></li>
+                  <li><a href="#">Guides</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li class="nav-cta">
+          <a href="contact.html" class="btn btn-primary active">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- Contact Hero -->
   <section class="hero contact-hero">
@@ -24,6 +74,11 @@
       <h1>Let's Talk About Your Project</h1>
       <p class="subheading">Our team is ready to help with your IT and marketing needs</p>
     </div>
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/contact-hero-mobile.jpg">
+      <source media="(min-width: 769px)" srcset="images/contact-hero-desktop.jpg">
+      <img src="images/contact-hero-desktop.jpg" alt="" aria-hidden="true" class="hero-bg">
+    </picture>
   </section>
 
   <!-- Contact Form -->
@@ -35,11 +90,11 @@
           <form id="contactForm">
             <div class="form-group">
               <label for="name">Full Name*</label>
-              <input type="text" id="name" required>
+              <input type="text" id="name" required aria-required="true">
             </div>
             <div class="form-group">
               <label for="email">Email*</label>
-              <input type="email" id="email" required>
+              <input type="email" id="email" required aria-required="true">
             </div>
             <div class="form-group">
               <label for="service">Service Interested In</label>
@@ -54,7 +109,7 @@
             </div>
             <div class="form-group">
               <label for="message">How can we help?*</label>
-              <textarea id="message" rows="5" required></textarea>
+              <textarea id="message" rows="5" required aria-required="true"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
@@ -63,31 +118,32 @@
         <div class="contact-info">
           <h2>Contact Information</h2>
           <div class="contact-method">
-            <i class="fas fa-phone-alt"></i>
+            <i class="fas fa-phone-alt" aria-hidden="true"></i>
             <div>
               <h3>Phone Support</h3>
-              <p>24/7 Technical Support: <strong>(555) 123-4567</strong></p>
-              <p>Sales Inquiries: <strong>(555) 987-6543</strong></p>
+              <p>24/7 Technical Support: <strong>+27 67 426 4241</strong></p>
+              <p>Sales Inquiries: <strong>+27 10 123 0000</strong></p>
             </div>
           </div>
           
           <div class="contact-method">
-            <i class="fas fa-envelope"></i>
+            <i class="fas fa-envelope" aria-hidden="true"></i>
             <div>
               <h3>Email</h3>
-              <p>Support: <a href="mailto:support@birthmarkitsolutions.com">support@birthmarkitsolutions.com</a></p>
-              <p>Sales: <a href="mailto:sales@birthmarkitsolutions.com">sales@birthmarkitsolutions.com</a></p>
+              <p>Support: <a href="mailto:support@birthmarkitsolutions.com">support@birthmarkitsolutions.co.za</a></p>
+              <p>Sales: <a href="mailto:sales@birthmarkitsolutions.com">sales@birthmarkitsolutions.co.za</a></p>
             </div>
           </div>
           
           <div class="contact-method">
-            <i class="fas fa-map-marker-alt"></i>
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
             <div>
               <h3>Headquarters</h3>
               <address>
-                123 Tech Park Drive<br>
-                Suite 400<br>
-                San Francisco, CA 94107
+                Eagles Hill, Lesar Road<br>
+                Fairleads<br>
+                Benoni<br> 
+                1501
               </address>
               <a href="#" class="btn btn-outline">Get Directions</a>
             </div>
@@ -97,8 +153,78 @@
     </div>
   </section>
 
-  <!-- Footer (same as index.html) -->
-  <footer class="footer">...</footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Products</h3>
+          <ul>
+            <li><a href="domains.html">Domains</a></li>
+            <li><a href="hosting.html">Hosting</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="marketing.html">Marketing</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faq.html">Help Center</a></li>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">Developer API</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          </div>
+          <div class="newsletter">
+            <p>Subscribe to our newsletter</p>
+            <form class="newsletter-form" aria-label="Newsletter subscription">
+              <input type="email" placeholder="Your email" required aria-label="Email address">
+              <button type="submit" aria-label="Subscribe"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticker Strip -->
+      <div class="ticker-strip">
+        <div class="ticker-content">
+          <span>Trusted by businesses in South Africa</span>
+          <span>24/7 Expert Support</span>
+          <span>99.9% Uptime Guarantee</span>
+          <span>Enterprise-grade Security</span>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Birthmark IT Solutions. All rights reserved.</p>
+        <div class="legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="js/main.js"></script>
 </body>
