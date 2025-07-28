@@ -1,78 +1,735 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog | Birthmark IT Solutions</title>
-  <link rel="stylesheet" href="css/style.css">
-  <!-- Same head content as index.html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Insights Blog | Birthmark IT Solutions</title>
+    <meta name="description" content="Stay updated with the latest IT trends, security best practices, and technology insights from Birthmark IT Solutions experts.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Additional Blog-specific Styles */
+        .blog-hero {
+            background-color: var(--primary);
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+        
+        .blog-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .blog-hero .subheading {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .blog-image {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+        
+        .blog-date {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-content h2 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .blog-content h2 a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .blog-content h2 a:hover {
+            color: var(--primary);
+        }
+        
+        .blog-excerpt {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+        }
+        
+        .blog-meta i {
+            margin-right: 5px;
+            font-size: 0.8rem;
+        }
+        
+        .categories-sidebar {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .categories-sidebar h3 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .category-list {
+            list-style: none;
+        }
+        
+        .category-list li {
+            margin-bottom: 10px;
+        }
+        
+        .category-list a {
+            display: flex;
+            align-items: center;
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+            padding: 8px 0;
+        }
+        
+        .category-list a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        
+        .category-list i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .popular-posts {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .popular-posts h3 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .popular-post {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border);
+        }
+        
+        .popular-post:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .popular-post img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+        
+        .popular-post-content h4 {
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+            line-height: 1.4;
+        }
+        
+        .popular-post-content h4 a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .popular-post-content h4 a:hover {
+            color: var(--primary);
+        }
+        
+        .popular-post-date {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        
+        .pagination a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            margin: 0 5px;
+            border-radius: 4px;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .pagination a.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .pagination a:not(.btn):hover {
+            background: var(--primary-extra-light);
+            color: var(--primary);
+        }
+        
+        .pagination .btn {
+            padding: 0 20px;
+            width: auto;
+        }
+        
+        .newsletter-section {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .newsletter-section h2 {
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-section p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-family: var(--font-main);
+        }
+        
+        .newsletter-form button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 4px 4px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background: #e04a20;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-hero {
+                padding: 80px 0 60px;
+            }
+            
+            .blog-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+                border-radius: 4px;
+            }
+            
+            .newsletter-form button {
+                margin-top: 10px;
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Announcement Bar -->
-  <div class="announcement-bar">
-    <div class="container">
-      <p>📢 New: Read our latest article on cloud security best practices</p>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <p>📢 New: Read our latest article on cloud security best practices <a href="#latest-post">View now</a></p>
+        </div>
     </div>
-  </div>
 
-  <!-- Navigation -->
-  <nav class="navbar">...</nav>
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="Birthmark IT Solutions Home">
+                <i class="fas fa-server" aria-hidden="true"></i>
+                <span>Birthmark IT Solutions</span>
+            </a>
+            
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
+                <span class="sr-only">Menu</span>
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            
+            <ul class="nav-list" id="main-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="hosting.html">Hosting</a></li>
+                <li><a href="domains.html">Domains</a></li>
+                <li class="dropdown">
+                    <a href="#" aria-haspopup="true" aria-expanded="false">
+                        Resources <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu" role="menu">
+                        <div class="dropdown-container">
+                            <div class="dropdown-column">
+                                <h4>Resources</h4>
+                                <ul>
+                                    <li><a href="blog.html" class="active">Blog</a></li>
+                                    <li><a href="faq.html">FAQs</a></li>
+                                    <li><a href="#">Case Studies</a></li>
+                                    <li><a href="#">Whitepapers</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>Learning</h4>
+                                <ul>
+                                    <li><a href="#">Webinars</a></li>
+                                    <li><a href="#">Tutorials</a></li>
+                                    <li><a href="#">Guides</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li class="nav-cta">
+                    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-  <!-- Blog Hero -->
-  <section class="hero blog-hero">
-    <div class="container">
-      <h1>Birthmark IT Blog</h1>
-      <p class="subheading">Insights, news and best practices in enterprise IT</p>
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>IT Insights & News</h1>
+            <p class="subheading">Expert perspectives on technology trends, security best practices, and IT solutions</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container blog-container">
+        <div class="grid two-col">
+            <main class="blog-main">
+                <h2 class="sr-only">Blog Articles</h2>
+                
+                <!-- Featured Post -->
+                <article class="blog-card" id="latest-post">
+                    <div class="blog-image">
+                        <img src="images/blog/cloud-security-featured.jpg" alt="Cloud security concepts" loading="lazy">
+                        <div class="blog-date">June 12, 2023</div>
+                    </div>
+                    <div class="blog-content">
+                        <h2><a href="blog-post.html">Cloud Security Best Practices for Enterprise Environments</a></h2>
+                        <p class="blog-excerpt">Learn how to secure your cloud infrastructure with these essential strategies that protect against modern threats while maintaining performance and compliance...</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-tag" aria-hidden="true"></i> Security</span>
+                            <span><i class="fas fa-clock" aria-hidden="true"></i> 8 min read</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Blog Grid -->
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="images/blog/ai-business.jpg" alt="AI in business applications" loading="lazy">
+                            <div class="blog-date">May 28, 2023</div>
+                        </div>
+                        <div class="blog-content">
+                            <h2><a href="blog-post.html">Practical AI Applications for Small Businesses</a></h2>
+                            <p class="blog-excerpt">Discover how small and medium businesses can leverage AI tools to improve operations, customer service, and decision-making without breaking the bank...</p>
+                            <div class="blog-meta">
+                                <span><i class="fas fa-tag" aria-hidden="true"></i> Technology</span>
+                                <span><i class="fas fa-clock" aria-hidden="true"></i> 6 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="images/blog/ransomware-protection.jpg" alt="Ransomware protection" loading="lazy">
+                            <div class="blog-date">May 15, 2023</div>
+                        </div>
+                        <div class="blog-content">
+                            <h2><a href="blog-post.html">The Evolving Ransomware Threat: Protection Strategies</a></h2>
+                            <p class="blog-excerpt">As ransomware attacks become more sophisticated, learn about the latest defense mechanisms and recovery planning to protect your organization's data...</p>
+                            <div class="blog-meta">
+                                <span><i class="fas fa-tag" aria-hidden="true"></i> Security</span>
+                                <span><i class="fas fa-clock" aria-hidden="true"></i> 10 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="images/blog/hybrid-work.jpg" alt="Hybrid work technology" loading="lazy">
+                            <div class="blog-date">April 30, 2023</div>
+                        </div>
+                        <div class="blog-content">
+                            <h2><a href="blog-post.html">Essential IT Infrastructure for Hybrid Work Environments</a></h2>
+                            <p class="blog-excerpt">Building the right technology foundation for hybrid workplaces that balances security, accessibility, and collaboration for distributed teams...</p>
+                            <div class="blog-meta">
+                                <span><i class="fas fa-tag" aria-hidden="true"></i> Workplace</span>
+                                <span><i class="fas fa-clock" aria-hidden="true"></i> 7 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="images/blog/data-backup.jpg" alt="Data backup solutions" loading="lazy">
+                            <div class="blog-date">April 18, 2023</div>
+                        </div>
+                        <div class="blog-content">
+                            <h2><a href="blog-post.html">Beyond Backup: Modern Data Protection Strategies</a></h2>
+                            <p class="blog-excerpt">Why traditional backup solutions aren't enough anymore and how to implement comprehensive data protection that meets modern business requirements...</p>
+                            <div class="blog-meta">
+                                <span><i class="fas fa-tag" aria-hidden="true"></i> Data</span>
+                                <span><i class="fas fa-clock" aria-hidden="true"></i> 9 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="images/blog/wordpress-security.jpg" alt="WordPress security" loading="lazy">
+                            <div class="blog-date">April 5, 2023</div>
+                        </div>
+                        <div class="blog-content">
+                            <h2><a href="blog-post.html">WordPress Security: Protecting Your Business Website</a></h2>
+                            <p class="blog-excerpt">Step-by-step guide to hardening your WordPress installation against common vulnerabilities and maintaining a secure online presence...</p>
+                            <div class="blog-meta">
+                                <span><i class="fas fa-tag" aria-hidden="true"></i> Web</span>
+                                <span><i class="fas fa-clock" aria-hidden="true"></i> 5 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="images/blog/email-encryption.jpg" alt="Email encryption" loading="lazy">
+                            <div class="blog-date">March 22, 2023</div>
+                        </div>
+                        <div class="blog-content">
+                            <h2><a href="blog-post.html">Implementing Email Encryption: What You Need to Know</a></h2>
+                            <p class="blog-excerpt">Protecting sensitive communications in transit with practical email encryption solutions suitable for businesses of all sizes...</p>
+                            <div class="blog-meta">
+                                <span><i class="fas fa-tag" aria-hidden="true"></i> Security</span>
+                                <span><i class="fas fa-clock" aria-hidden="true"></i> 6 min read</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="pagination">
+                    <a href="#" class="btn btn-outline">Previous</a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#" class="btn btn-outline">Next</a>
+                </div>
+            </main>
+            
+            <!-- Sidebar -->
+            <aside class="blog-sidebar">
+                <div class="categories-sidebar">
+                    <h3>Categories</h3>
+                    <ul class="category-list">
+                        <li><a href="#"><i class="fas fa-lock" aria-hidden="true"></i> Security</a></li>
+                        <li><a href="#"><i class="fas fa-cloud" aria-hidden="true"></i> Cloud Computing</a></li>
+                        <li><a href="#"><i class="fas fa-database" aria-hidden="true"></i> Data Management</a></li>
+                        <li><a href="#"><i class="fas fa-network-wired" aria-hidden="true"></i> Networking</a></li>
+                        <li><a href="#"><i class="fas fa-code" aria-hidden="true"></i> Development</a></li>
+                        <li><a href="#"><i class="fas fa-chart-line" aria-hidden="true"></i> Business Technology</a></li>
+                        <li><a href="#"><i class="fas fa-cogs" aria-hidden="true"></i> IT Operations</a></li>
+                        <li><a href="#"><i class="fas fa-mobile-alt" aria-hidden="true"></i> Mobile Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="popular-posts">
+                    <h3>Popular Posts</h3>
+                    <div class="popular-post">
+                        <img src="images/blog/zero-trust-thumb.jpg" alt="Zero trust security model" loading="lazy">
+                        <div class="popular-post-content">
+                            <h4><a href="blog-post.html">Implementing Zero Trust Security in Your Organization</a></h4>
+                            <div class="popular-post-date">May 5, 2023</div>
+                        </div>
+                    </div>
+                    <div class="popular-post">
+                        <img src="images/blog/multi-cloud-thumb.jpg" alt="Multi-cloud strategy" loading="lazy">
+                        <div class="popular-post-content">
+                            <h4><a href="blog-post.html">Multi-Cloud Strategy: Benefits and Challenges</a></h4>
+                            <div class="popular-post-date">April 12, 2023</div>
+                        </div>
+                    </div>
+                    <div class="popular-post">
+                        <img src="images/blog/remote-support-thumb.jpg" alt="Remote IT support" loading="lazy">
+                        <div class="popular-post-content">
+                            <h4><a href="blog-post.html">Best Tools for Remote IT Support and Management</a></h4>
+                            <div class="popular-post-date">March 28, 2023</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="newsletter-widget">
+                    <h3>Stay Updated</h3>
+                    <p>Get the latest tech insights delivered to your inbox</p>
+                    <form class="sidebar-newsletter-form">
+                        <input type="email" placeholder="Your email address" required aria-label="Email address">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </aside>
+        </div>
     </div>
-  </section>
 
-  <!-- Blog Content -->
-  <section class="section">
-    <div class="container">
-      <div class="blog-grid">
-        <article class="blog-card">
-          <div class="blog-image">
-            <img src="images/blog/cloud-security.jpg" alt="Cloud Security">
-            <div class="blog-date">May 15, 2023</div>
-          </div>
-          <div class="blog-content">
-            <h2><a href="blog-post.html">Cloud Security Best Practices for 2023</a></h2>
-            <p class="blog-excerpt">Learn how to secure your cloud infrastructure with these essential strategies...</p>
-            <div class="blog-meta">
-              <span><i class="fas fa-tag"></i> Security</span>
-              <span><i class="fas fa-clock"></i> 5 min read</span>
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2>Never Miss an Update</h2>
+            <p>Subscribe to our newsletter for the latest IT insights, security alerts, and technology tips delivered straight to your inbox.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email address" required aria-label="Email address">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Products</h3>
+                    <ul>
+                        <li><a href="domains.html">Domains</a></li>
+                        <li><a href="hosting.html">Hosting</a></li>
+                        <li><a href="security.html">Security</a></li>
+                        <li><a href="marketing.html">Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="faq.html">Help Center</a></li>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">Developer API</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <p>Subscribe to our newsletter</p>
+                        <form class="newsletter-form" aria-label="Newsletter subscription">
+                            <input type="email" placeholder="Your email" required aria-label="Email address">
+                            <button type="submit" aria-label="Subscribe"><i class="fas fa-arrow-right" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                </div>
             </div>
-          </div>
-        </article>
-        
-        <!-- Add 5 more blog cards -->
-      </div>
-      
-      <div class="pagination">
-        <a href="#" class="btn btn-outline">Previous</a>
-        <a href="#" class="active">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#" class="btn btn-outline">Next</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- Newsletter -->
-  <section class="section bg-light">
-    <div class="container text-center">
-      <h2>Stay Updated</h2>
-      <p>Subscribe to our newsletter for the latest tech insights</p>
-      <form class="newsletter-form">
-        <input type="email" placeholder="Your email address" required>
-        <button type="submit" class="btn btn-primary">Subscribe</button>
-      </form>
-    </div>
-  </section>
+            <!-- Ticker Strip -->
+            <div class="ticker-strip">
+                <div class="ticker-content">
+                    <span>Trusted by businesses in South Africa</span>
+                    <span>24/7 Expert Support</span>
+                    <span>99.9% Uptime Guarantee</span>
+                    <span>Enterprise-grade Security</span>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Birthmark IT Solutions. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-  <!-- Footer -->
-  <footer class="footer">...</footer>
-
-  <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Blog-specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            // Mobile menu toggle
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navList = document.querySelector('.nav-list');
+            
+            if (mobileToggle && navList) {
+                mobileToggle.addEventListener('click', function() {
+                    const expanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !expanded);
+                    navList.classList.toggle('active');
+                });
+            }
+            
+            // FAQ accordion functionality
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', function() {
+                    const expanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !expanded);
+                    const answer = document.getElementById(this.getAttribute('aria-controls'));
+                    answer.setAttribute('aria-hidden', expanded);
+                    
+                    // Toggle icon
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-chevron-down');
+                        icon.classList.toggle('fa-chevron-up');
+                    }
+                });
+            });
+            
+            // Lazy loading for images
+            if ('loading' in HTMLImageElement.prototype) {
+                // Native lazy loading is supported
+                const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+                lazyImages.forEach(img => {
+                    img.src = img.dataset.src;
+                });
+            } else {
+                // Fallback for browsers without native lazy loading
+                const lazyLoadObserver = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            const lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyLoadObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+                
+                const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+                lazyImages.forEach((img) => {
+                    lazyLoadObserver.observe(img);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
