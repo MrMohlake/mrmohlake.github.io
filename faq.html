@@ -5,12 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQs | Birthmark IT Solutions</title>
   <link rel="stylesheet" href="css/style.css">
-  <!-- Same head content as index.html -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <!-- Shared Navigation -->
-  <div class="announcement-bar">...</div>
-  <nav class="navbar">...</nav>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <p>📢 New: Read our guide to website security best practices <a href="#">Download now</a></p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <!-- Same navigation as index.html -->
+  </nav>
 
   <!-- FAQ Hero -->
   <section class="hero faq-hero">
@@ -18,13 +27,18 @@
       <h1>Frequently Asked Questions</h1>
       <p>Find answers to common questions about our services</p>
     </div>
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/faq-hero-mobile.jpg">
+      <source media="(min-width: 769px)" srcset="images/faq-hero-desktop.jpg">
+      <img src="images/faq-hero-desktop.jpg" alt="" aria-hidden="true" class="hero-bg">
+    </picture>
   </section>
 
   <!-- FAQ Search -->
   <section class="section">
     <div class="container">
       <div class="faq-search">
-        <input type="text" placeholder="Search FAQs...">
+        <input type="text" placeholder="Search FAQs..." aria-label="Search FAQs">
         <button class="btn btn-primary">Search</button>
       </div>
     </div>
@@ -33,13 +47,28 @@
   <!-- FAQ Categories -->
   <section class="section">
     <div class="container">
+      <h2 class="text-center">Browse by Category</h2>
       <div class="faq-categories">
         <div class="category-card">
-          <i class="fas fa-cloud"></i>
+          <i class="fas fa-cloud" aria-hidden="true"></i>
           <h3>Cloud Hosting</h3>
           <a href="#hosting" class="btn btn-outline">View Questions</a>
         </div>
-        <!-- Add 3 more category cards -->
+        <div class="category-card">
+          <i class="fas fa-globe" aria-hidden="true"></i>
+          <h3>Domains</h3>
+          <a href="#domains" class="btn btn-outline">View Questions</a>
+        </div>
+        <div class="category-card">
+          <i class="fas fa-shield-alt" aria-hidden="true"></i>
+          <h3>Security</h3>
+          <a href="#security" class="btn btn-outline">View Questions</a>
+        </div>
+        <div class="category-card">
+          <i class="fas fa-bullhorn" aria-hidden="true"></i>
+          <h3>Marketing</h3>
+          <a href="#marketing" class="btn btn-outline">View Questions</a>
+        </div>
       </div>
     </div>
   </section>
@@ -50,34 +79,128 @@
       <h2 id="hosting" class="faq-section-title">Cloud Hosting Questions</h2>
       <div class="faq-grid">
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="hosting-answer-1">
             What is your uptime guarantee?
-            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
           </button>
-          <div class="faq-answer">
+          <div id="hosting-answer-1" class="faq-answer" aria-hidden="true">
             <p>We offer a 99.99% uptime SLA for all our cloud hosting plans. If we fall below this, you'll receive service credits according to our terms.</p>
           </div>
         </div>
-        <!-- Add 4 more hosting FAQs -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="hosting-answer-2">
+            Can I upgrade my hosting plan later?
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div id="hosting-answer-2" class="faq-answer" aria-hidden="true">
+            <p>Yes, you can upgrade your hosting plan at any time with no downtime. Our team will handle the migration seamlessly.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="hosting-answer-3">
+            Do you offer website migration services?
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div id="hosting-answer-3" class="faq-answer" aria-hidden="true">
+            <p>Yes, we offer free website migrations for all new hosting customers. Our team will move your site with zero downtime.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="hosting-answer-4">
+            What backup options are available?
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div id="hosting-answer-4" class="faq-answer" aria-hidden="true">
+            <p>All plans include daily automated backups with 30-day retention. Higher-tier plans offer more frequent backups and longer retention periods.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="domains" class="faq-section-title">Domain Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="domain-answer-1">
+            How do I transfer my domain to Birthmark IT?
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div id="domain-answer-1" class="faq-answer" aria-hidden="true">
+            <p>To transfer your domain, you'll need to unlock it at your current registrar and obtain the authorization code. Then initiate the transfer through your Birthmark IT account.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="domain-answer-2">
+            What is domain privacy protection?
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div id="domain-answer-2" class="faq-answer" aria-hidden="true">
+            <p>Domain privacy replaces your personal contact information in the WHOIS database with our proxy information, reducing spam and protecting your privacy.</p>
+          </div>
+        </div>
       </div>
 
       <h2 id="security" class="faq-section-title">Security Questions</h2>
       <div class="faq-grid">
         <div class="faq-item">
-          <button class="faq-question">
+          <button class="faq-question" aria-expanded="false" aria-controls="security-answer-1">
             What security measures do you have in place?
-            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
           </button>
-          <div class="faq-answer">
+          <div id="security-answer-1" class="faq-answer" aria-hidden="true">
             <p>Our security stack includes enterprise-grade firewalls, DDoS protection, malware scanning, and 24/7 threat monitoring by our security operations center.</p>
           </div>
         </div>
-        <!-- Add 4 more security FAQs -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="security-answer-2">
+            Do you offer SSL certificates?
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div id="security-answer-2" class="faq-answer" aria-hidden="true">
+            <p>Yes, we offer free Let's Encrypt SSL certificates with all hosting plans. We also provide premium SSL certificates from leading providers.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 id="marketing" class="faq-section-title">Marketing Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="marketing-answer-1">
+            How long does SEO take to show results?
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div id="marketing-answer-1" class="faq-answer" aria-hidden="true">
+            <p>SEO is a long-term strategy. Typically, you'll start seeing initial results in 3-6 months, with more significant improvements after 6-12 months of consistent effort.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="marketing-answer-2">
+            What's included in your marketing reports?
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          </button>
+          <div id="marketing-answer-2" class="faq-answer" aria-hidden="true">
+            <p>Our monthly reports include traffic analytics, conversion metrics, campaign performance, ROI analysis, and actionable recommendations.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Shared Footer -->
-  <footer class="footer">...</footer>
+  <!-- Support CTA -->
+  <section class="section">
+    <div class="container text-center">
+      <div class="support-cta">
+        <i class="fas fa-headset" aria-hidden="true"></i>
+        <h2>Still Have Questions?</h2>
+        <p>Our support team is available 24/7 to help you</p>
+        <a href="contact.html" class="btn btn-primary btn-lg">Contact Support</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- Same footer as index.html -->
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
