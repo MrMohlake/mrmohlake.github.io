@@ -1,82 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise Security Solutions | Birthmark IT</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Security Solutions | Birthmark IT</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- ===== SECURITY HERO SECTION ===== -->
-    <section class="security-hero">
-        <div class="container">
-            <h1>Your Business Fortress Starts Here</h1>
-            <p class="subtitle">Enterprise-grade security that scales with your growth</p>
-            <div class="cta-group">
-                <a href="contact.html?service=security" class="btn-primary">Get a Free Security Audit</a>
-                <a href="#compliance-badges" class="btn-secondary">Our Certifications</a>
-            </div>
-        </div>
-    </section>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <p>🔐 Free security audit for new clients! <a href="#audit">Claim yours</a></p>
+    </div>
+  </div>
 
-    <!-- ===== SERVICES SECTION ===== -->
-    <section class="security-services container">
-        <div class="service-card" id="vulnerability">
-            <div class="service-icon">
-                <img src="../assets/images/icons/shield-scan.svg" alt="" width="48">
-            </div>
-            <h3>Vulnerability Assessments</h3>
-            <p>Identify weaknesses in your systems before attackers do. Our scans cover networks, apps, and APIs with actionable remediation plans.</p>
-            <ul class="service-features">
-                <li>Automated + manual testing</li>
-                <li>OWASP Top 10 coverage</li>
-                <li>Executive summary report</li>
-            </ul>
-        </div>
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <!-- Same navigation as index.html -->
+  </nav>
 
-        <div class="service-card" id="compliance">
-            <div class="service-icon">
-                <img src="../assets/images/icons/certificate.svg" alt="" width="48">
-            </div>
-            <h3>Compliance Consulting</h3>
-            <p>Achieve SOC2/ISO27001 compliance faster with our guided audits, documentation templates, and gap analysis.</p>
-            <ul class="service-features">
-                <li>Framework mapping</li>
-                <li>Policy templates</li>
-                <li>Audit preparation</li>
-            </ul>
-        </div>
+  <!-- Security Hero -->
+  <section class="hero security-hero">
+    <div class="container">
+      <h1>Your Business Fortress Starts Here</h1>
+      <p class="subheading">Enterprise-grade security that scales with your growth</p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn-primary btn-lg">Get Protected</a>
+        <a href="#solutions" class="btn btn-outline-light btn-lg">Explore Solutions</a>
+      </div>
+    </div>
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/security-hero-mobile.jpg">
+      <source media="(min-width: 769px)" srcset="images/security-hero-desktop.jpg">
+      <img src="images/security-hero-desktop.jpg" alt="" aria-hidden="true" class="hero-bg">
+    </picture>
+  </section>
 
-        <div class="service-card" id="firewalls">
-            <div class="service-icon">
-                <img src="../assets/images/icons/firewall.svg" alt="" width="48">
-            </div>
-            <h3>Managed Firewalls</h3>
-            <p>24/7 monitoring and rule optimization to block threats without slowing your operations.</p>
-            <ul class="service-features">
-                <li>Zero-day threat protection</li>
-                <li>Monthly performance reports</li>
-                <li>Emergency response SLA</li>
-            </ul>
+  <!-- Security Services -->
+  <section id="solutions" class="section">
+    <div class="container">
+      <h2 class="text-center">Comprehensive Security Solutions</h2>
+      <div class="grid three-col">
+        <div class="security-service">
+          <div class="service-icon">
+            <i class="fas fa-shield-virus" aria-hidden="true"></i>
+          </div>
+          <h3>Threat Protection</h3>
+          <p>Advanced protection against malware, ransomware, and zero-day threats</p>
+          <a href="#" class="btn btn-outline">Learn More</a>
         </div>
-    </section>
+        <div class="security-service">
+          <div class="service-icon">
+            <i class="fas fa-lock" aria-hidden="true"></i>
+          </div>
+          <h3>Data Encryption</h3>
+          <p>End-to-end encryption for data at rest and in transit</p>
+          <a href="#" class="btn btn-outline">Learn More</a>
+        </div>
+        <div class="security-service">
+          <div class="service-icon">
+            <i class="fas fa-user-shield" aria-hidden="true"></i>
+          </div>
+          <h3>Access Control</h3>
+          <p>Granular permissions and multi-factor authentication</p>
+          <a href="#" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- ===== COMPLIANCE BADGES ===== -->
-    <section class="compliance-badges" id="compliance-badges">
-        <div class="container">
-            <h2>Trusted by Security-Conscious Organizations</h2>
-            <div class="badges-grid">
-                <div class="badge-item" aria-describedby="soc2-desc">
-                    <img src="../assets/images/logos/soc2.svg" alt="SOC2 Type II Compliant">
-                    <p class="badge-caption">SOC2 Type II</p>
-                </div>
-                <!-- Repeat for other badges -->
-            </div>
-            <a href="/downloads/security-compliance-checklist.pdf" class="btn-accent">
-                <img src="../assets/images/icons/download.svg" alt="" width="20">
-                Download Compliance Checklist
-            </a>
+  <!-- Security Audit -->
+  <section id="audit" class="section bg-light">
+    <div class="container">
+      <div class="grid two-col">
+        <div class="content">
+          <h2>Free Security Audit</h2>
+          <p>Identify vulnerabilities in your systems before attackers do. Our comprehensive audit includes:</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Network vulnerability scan</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Web application testing</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Security policy review</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Detailed risk assessment</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Remediation roadmap</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary">Request Free Audit</a>
         </div>
-    </section>
+        <div class="image">
+          <img src="images/security/audit.jpg" alt="Security audit dashboard" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance -->
+  <section class="section">
+    <div class="container">
+      <h2 class="text-center">Compliance Expertise</h2>
+      <p class="text-center">We help you meet industry regulations and standards</p>
+      <div class="compliance-grid">
+        <div class="compliance-item">
+          <img src="images/compliance/pcidss.png" alt="PCI DSS compliant" loading="lazy">
+          <p>PCI DSS</p>
+        </div>
+        <div class="compliance-item">
+          <img src="images/compliance/gdpr.png" alt="GDPR compliant" loading="lazy">
+          <p>GDPR</p>
+        </div>
+        <div class="compliance-item">
+          <img src="images/compliance/hipaa.png" alt="HIPAA compliant" loading="lazy">
+          <p>HIPAA</p>
+        </div>
+        <div class="compliance-item">
+          <img src="images/compliance/iso27001.png" alt="ISO 27001 certified" loading="lazy">
+          <p>ISO 27001</p>
+        </div>
+        <div class="compliance-item">
+          <img src="images/compliance/popa.png" alt="POPIA compliant" loading="lazy">
+          <p>POPIA</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Managed Security -->
+  <section class="section bg-primary">
+    <div class="container">
+      <div class="grid two-col reverse">
+        <div class="content">
+          <h2>Managed Security Services</h2>
+          <p>24/7 monitoring and protection by our security operations center (SOC)</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Continuous threat monitoring</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Incident response</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Security patch management</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Monthly security reports</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Dedicated security team</li>
+          </ul>
+          <a href="contact.html" class="btn btn-light">Get Managed Security</a>
+        </div>
+        <div class="image">
+          <img src="images/security/soc.jpg" alt="Security operations center" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security Awareness -->
+  <section class="section">
+    <div class="container">
+      <div class="grid two-col">
+        <div class="content">
+          <h2>Security Awareness Training</h2>
+          <p>Your employees are your first line of defense. Our training program includes:</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Phishing simulations</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Interactive training modules</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Policy templates</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Progress tracking</li>
+            <li><i class="fas fa-check-circle" aria-hidden="true"></i> Compliance reporting</li>
+          </ul>
+          <a href="#" class="btn btn-primary">Learn About Training</a>
+        </div>
+        <div class="image">
+          <img src="images/security/training.jpg" alt="Security training session" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section cta bg-dark">
+    <div class="container text-center">
+      <h2>Don't Wait Until It's Too Late</h2>
+      <p>Cyber threats are evolving daily. Protect your business now.</p>
+      <div class="cta-buttons">
+        <a href="tel:+27674264241" class="btn btn-primary">
+          <i class="fas fa-phone" aria-hidden="true"></i> Call Security Experts
+        </a>
+        <a href="contact.html" class="btn btn-outline-light">Get Security Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- Same footer as index.html -->
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
