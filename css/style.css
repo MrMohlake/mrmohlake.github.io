@@ -414,6 +414,64 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
   margin-bottom: var(--space-md);
 }
 
+/* Services Grid Layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* Color Gradients for New Cards */
+.service-card:nth-child(7)::before {
+  background: linear-gradient(90deg, #6e45e2, #88d3ce);
+}
+.service-card:nth-child(7) i {
+  color: #6e45e2;
+}
+
+.service-card:nth-child(8)::before {
+  background: linear-gradient(90deg, #ffafbd, #ffc3a0);
+}
+.service-card:nth-child(8) i {
+  color: #ffafbd;
+}
+
+/* Add this for the 9th service card */
+.service-card:nth-child(9)::before {
+  background: linear-gradient(90deg, #a18cd1, #fbc2eb);
+}
+.service-card:nth-child(9) i {
+  color: #a18cd1;
+}
+
+/* Adjust grid for odd number of cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+@media (min-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Feature List */
 .feature-list {
   list-style: none;
@@ -573,6 +631,35 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(26px);
+}
+
+/* Adjust grid for 4 columns on desktop */
+@media (min-width: 1024px) {
+  .services-section .grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  }
+}
+
+/* Add color gradients for new cards */
+.service-card:nth-child(7)::before {
+  background: linear-gradient(90deg, #6e45e2, #88d3ce);
+}
+.service-card:nth-child(7) .service-icon {
+  color: #6e45e2;
+}
+
+.service-card:nth-child(8)::before {
+  background: linear-gradient(90deg, #ffafbd, #ffc3a0);
+}
+.service-card:nth-child(8) .service-icon {
+  color: #ffafbd;
+}
+
+@media (max-width: 768px) {
+  .services-section .grid {
+    grid-template-columns: 1fr; /* Stack on mobile */
+    gap: 1.5rem;
+  }
 }
 
 /* Form Styles */
